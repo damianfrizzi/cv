@@ -6,7 +6,7 @@ export interface ITimeLineItem {
   title: string
   location: string
   description?: string | []
-  descriptions?: string[]
+  paragraphs?: string[]
   dateFrom: string
   dateTo: string
 }

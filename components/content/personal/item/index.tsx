@@ -14,8 +14,8 @@ export default class PersonalItem extends PureComponent<IPersonalItemProps> {
 
           <div>
             <h2>{item.title}</h2>
-            {item.paragraphs.map(paragraph => (
-              <p>{paragraph}</p>
+            {item.paragraphs.map((paragraph: string, i: number) => (
+              <p key={i}>{paragraph}</p>
             ))}
           </div>
         </div>

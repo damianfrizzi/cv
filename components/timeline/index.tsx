@@ -20,6 +20,13 @@ export default class Timeline extends PureComponent<ITimelineProps> {
               {item.dateFrom} - {item.dateTo}
             </small>
             {item.description && <p>{item.description}</p>}
+            {item.paragraphs && (
+              <ul>
+                {item.paragraphs.map((paragraph: string, j: number) => (
+                  <li key={j}>{paragraph}</li>
+                ))}
+              </ul>
+            )}
           </Card>
         </div>
       </article>

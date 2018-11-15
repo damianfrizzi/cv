@@ -3,6 +3,7 @@ import { PureComponent, ReactNode } from 'react'
 import { Anchors, Locations } from '../../enums'
 import Timeline from '../../timeline'
 import Section from '../section'
+import styles from './styles.css'
 
 export default class Experience extends PureComponent {
   private items: ITimeLineItem[] = [
@@ -11,48 +12,64 @@ export default class Experience extends PureComponent {
       location: Locations.DigitecGalaxus,
       dateFrom: 'May 2018',
       dateTo: 'Present',
-      description:
-        'Responsible for the conception, implementation and launch of a highly modernized, universal (isomorphic) Frontend using React, GraphQL, Apollo and ASP.NET Web API with the goal to improve the user experience and increase development speed by decoupling the entire Frontend from the existing monolithic application. Coaching, training and mentoring of Engineers using the new stack within the department.'
+      paragraphs: [
+        'Responsible for the conception and implementation of a modernized, universal (isomorphic) Frontend architecture using React, GraphQL, Apollo, ASP.NET Web API, Docker.',
+        'Launch and continous deployment of the new Frontend application using automated build/release pipelines (VSTS) and Azure Kubernetes Services.',
+        'Coordinating department wide integration of the new technology stack.'
+      ]
     },
     {
       title: 'Teamleader Frontend Engineering & User Experience',
       location: Locations.DigitecGalaxus,
       dateFrom: 'June 2016',
       dateTo: 'May 2018',
-      description:
-        'Administration, recruiting, coordination and leadership of a team consisting of five Frontend Engineers, three Interaction Designers and one UX-Researcher. Development of mobile applications (iOS & Android) using React Native. Conception and implementation of a revamped Frontend architecture with the goal to decouple the entire Frontend from the existing monolithic application.'
+      paragraphs: [
+        'Recruiting, coordinating and leading a team of five Frontend Engineers, three Interaction Designers and one UX-Researcher.',
+        'Conception and prototyping of a revamped Frontend architecture with the goal of decoupling the entire Frontend from the existing monolithic application.',
+        'Development of mobile applications (iOS & Android) using React Native.'
+      ]
     },
     {
       title: 'Frontend Engineer',
       location: Locations.DigitecGalaxus,
       dateFrom: 'October 2014',
       dateTo: 'June 2016',
-      description:
-        'Responsible for maintaining and improving the Frontend of the onlineshops of Digitec Galaxus AG (digitec.ch & galaxus.ch) in close collaboration with the Backend Engineers, Business Development and the CTO as Product Owner. Restructuring of the whole website from the given adaptive design to a fully responsive website to improve user experience and to stop the development of the second software project. Assistance in hiring new Frontend Engineers and Interaction Designers.'
+      paragraphs: [
+        `As sole Frontend Engineer responsible for maintaining and improving the Frontend of the company's onlineshops (digitec.ch & galaxus.ch) in close collaboration with Backend Engineers, Business Development and the CTO as Product Owner.`,
+        'Restructuring whole website from the given adaptive design to a fully responsive website in order to improve user experience and stop maintaining and developing two software projects.',
+        'Assistance in hiring new Frontend Engineers and Interaction Designers.'
+      ]
     },
     {
       title: 'Junior Frontend Engineer',
       location: Locations.DigitecGalaxus,
       dateFrom: 'May 2013',
       dateTo: 'October 2014',
-      description:
-        'Successfully implemented about 15 projects (mostly small and medium-sized enterprises) for the company its design agency besides working on the onlineshops digitec.ch and galaxus.ch. Confrontation with different frameworks and technologies (Backbone.js, Require-JS, AngularJS, Git, SVN etc.). Atlassian software (Jira & Confluence) and Scrum methodolgy was used for all projects.'
+      paragraphs: [
+        `Successfully implemented 15 projects (mostly websites for small and medium-sized enterprises) for the company's design agency besides doing development for our own onlineshops.`,
+        'Confrontation with different frameworks and technologies (Backbone.js, Require-JS, AngularJS, Git, SVN etc.).',
+        'Atlassian software (Jira & Confluence) and Scrum methodolgy was used for all projects.'
+      ]
     },
     {
       title: 'Web Developer',
       location: Locations.Glencore,
       dateFrom: 'June 2010',
       dateTo: 'December 2010',
-      description:
-        'Development of interactive floorplans to assign seats to employess. The implementation was done using PHP and MySQL in the backend to fetch data through a RESTful Lotus Notes webservice and JavaScript, HTML and CSS in the Frontend to create an interactive experience.'
+      paragraphs: [
+        'Development of interactive floorplans to assign seats to employess.',
+        'The implementation was done with PHP and MySQL in the backend to fetch data through a RESTful Lotus Notes webservice and JavaScript, HTML and CSS.'
+      ]
     }
   ]
 
   public render(): ReactNode {
     return (
-      <Section title={Anchors.Experience}>
-        <Timeline items={this.items} />
-      </Section>
+      <div className={styles.experience}>
+        <Section title={Anchors.Experience}>
+          <Timeline items={this.items} />
+        </Section>
+      </div>
     )
   }
 }

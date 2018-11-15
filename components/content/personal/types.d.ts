@@ -1,6 +1,6 @@
 export interface IPersonalItem {
   title: string
-  description: string
+  paragraphs: string[]
   alt: string
   image: string
 }

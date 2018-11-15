@@ -8,7 +8,7 @@ export enum Locations {
 export enum Anchors {
   Experience = 'Experience',
   Education = 'Education',
-  Skills = 'Hard Skills',
+  Skills = 'Technologies and Skills',
   Languages = 'Languages',
   Personal = 'Personal'
 }

@@ -50,11 +50,13 @@ export default class Skills extends PureComponent {
     },
     {
       category: 'C# & .NET',
-      expertise: 30
+      expertise: 30,
+      keywordsBasic: ['ASP.NET Web API']
     },
     {
       category: 'PHP & MySQL',
-      expertise: 30
+      expertise: 30,
+      keywordsBasic: ['Wordpress', 'Magento', 'Symfony']
     }
   ]
 

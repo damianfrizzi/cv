@@ -19,6 +19,10 @@
   @media print {
     margin-left: 6rem;
   }
+
+  ul {
+    margin-top: 1rem;
+  }
 }
 
 .timeLineItemDeco {

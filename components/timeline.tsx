@@ -1,7 +1,19 @@
 import { FunctionComponent } from 'react'
-import { Card } from '../card'
-import styles from './styles.css'
-import { ITimelineProps } from './types'
+import { Card } from './card'
+import styles from './timeline.css'
+
+interface ITimelineProps {
+  items: ITimeLineItem[]
+}
+
+export interface ITimeLineItem {
+  title: string
+  location: string
+  description?: string | []
+  paragraphs?: string[]
+  dateFrom: string
+  dateTo: string
+}
 
 export const Timeline: FunctionComponent<ITimelineProps> = ({ items }) => (
   <>

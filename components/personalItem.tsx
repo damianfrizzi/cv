@@ -1,7 +1,11 @@
 import { FunctionComponent } from 'react'
-import { Card } from '../../../card'
-import styles from './styles.css'
-import { IPersonalItemProps } from './types'
+import { Card } from './card'
+import { IPersonalItem } from './personal'
+import styles from './personalItem.css'
+
+interface IPersonalItemProps {
+  item: IPersonalItem
+}
 
 export const PersonalItem: FunctionComponent<IPersonalItemProps> = ({ item }) => (
   <Card>

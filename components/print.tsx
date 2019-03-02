@@ -1,4 +1,4 @@
 import { FunctionComponent } from 'react'
-import styles from './styles.css'
+import styles from './print.css'
 
 export const PrintBreakBefore: FunctionComponent = () => <div className={styles.breakBefore} />

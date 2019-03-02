@@ -1,8 +1,7 @@
-import { ITimeLineItem } from 'components/timeline/types'
 import { FunctionComponent } from 'react'
-import { Anchors, Locations } from '../../enums'
-import { Timeline } from '../../timeline'
-import { Section } from '../section'
+import { Anchors, Locations } from './enums'
+import { Section } from './section'
+import { ITimeLineItem, Timeline } from './timeline'
 
 const items: ITimeLineItem[] = [
   {

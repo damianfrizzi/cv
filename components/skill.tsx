@@ -1,7 +1,11 @@
+import { ISkill } from 'components/skills'
 import { FunctionComponent } from 'react'
-import { Card } from '../../../card'
-import style from './styles.css'
-import { ISkillProps } from './types'
+import { Card } from './card'
+import style from './skill.css'
+
+interface ISkillProps {
+  skill: ISkill
+}
 
 export const Skill: FunctionComponent<ISkillProps> = ({ skill }) => (
   <Card>

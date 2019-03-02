@@ -1,11 +1,14 @@
 import classNames from 'classnames'
 import { FunctionComponent } from 'react'
-import styles from './styles.css'
-import { IStripeProps } from './types'
+import styles from './stripe.css'
 
 export enum Stripes {
   Top,
   Bottom
+}
+
+interface IStripeProps {
+  position: Stripes
 }
 
 export const Stripe: FunctionComponent<IStripeProps> = ({ position }) => (

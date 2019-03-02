@@ -1,6 +1,10 @@
 import { FunctionComponent } from 'react'
-import styles from './styles.css'
-import { ISectionProps } from './types'
+import { Anchors } from './enums'
+import styles from './section.css'
+
+interface ISectionProps {
+  title: Anchors
+}
 
 export const Section: FunctionComponent<ISectionProps> = ({ children, title }) => (
   <div className={`container ${styles.section}`}>

@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import { FunctionComponent } from 'react'
-import { Content } from '../content'
-import { Header } from '../header'
-import { Stripe, Stripes } from '../stripe'
-import './patterns.css'
-import styles from './styles.css'
+import { Content } from './content'
+import { Header } from './header'
+import styles from './layout.css'
+import { Stripe, Stripes } from './stripe'
 
 export const Layout: FunctionComponent = () => (
   <div className={styles.layout}>

@@ -1,9 +1,15 @@
 import { FunctionComponent } from 'react'
-import { Anchors } from '../../enums'
-import { Section } from '../section'
+import { Anchors } from './enums'
+import { Section } from './section'
 import { Skill } from './skill'
-import styles from './styles.css'
-import { ISkill } from './types'
+import styles from './skills.css'
+
+export interface ISkill {
+  category: string
+  expertise: number
+  keywordsProficient?: string[]
+  keywordsBasic?: string[]
+}
 
 const skills: ISkill[] = [
   {

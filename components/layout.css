@@ -1,3 +1,19 @@
+:root {
+  --primary-color: #e74c3c;
+  --primary-hover-color: #862318;
+  --default-padding: 24px;
+  --image-width: 168px;
+  --image-height: 192px;
+}
+
+@media print {
+  :root {
+    --default-padding: 12px;
+    --image-width: 148px;
+    --image-height: 172px;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;

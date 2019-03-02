@@ -1,9 +1,13 @@
 import { FunctionComponent } from 'react'
-import { Card } from '../../card'
-import { Anchors, LanguageProficiencies } from '../../enums'
-import { Section } from '../section'
-import styles from './styles.css'
-import { ILanguage } from './types'
+import { Card } from './card'
+import { Anchors, LanguageProficiencies } from './enums'
+import styles from './languages.css'
+import { Section } from './section'
+
+export interface ILanguage {
+  title: string
+  proficiency: LanguageProficiencies
+}
 
 const items: ILanguage[] = [
   {

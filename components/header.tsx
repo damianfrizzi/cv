@@ -1,6 +1,10 @@
 import { FunctionComponent } from 'react'
-import styles from './styles.css'
-import { IIcon } from './types'
+import styles from './header.css'
+
+interface IIcon {
+  path: string
+  alt: string
+}
 
 const githubIcon: IIcon = {
   path: '/static/images/github.svg',

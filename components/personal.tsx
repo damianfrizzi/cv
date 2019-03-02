@@ -1,9 +1,15 @@
 import { FunctionComponent } from 'react'
-import { Anchors } from '../../enums'
-import { Section } from '../section'
-import { PersonalItem } from './item'
-import styles from './styles.css'
-import { IPersonalItem } from './types'
+import { Anchors } from './enums'
+import styles from './personal.css'
+import { PersonalItem } from './personalItem'
+import { Section } from './section'
+
+export interface IPersonalItem {
+  title: string
+  paragraphs: string[]
+  alt: string
+  image: string
+}
 
 const items: IPersonalItem[] = [
   {

@@ -13,16 +13,7 @@
     "no-implicit-dependencies": false,
     "prefer-conditional-expression": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
-    "typedef": [
-      true,
-      "call-signature",
-      "arrow-call-signature",
-      "parameter",
-      "arrow-parameter",
-      "property-declaration",
-      "member-variable-declaration",
-      "array-destructuring"
-    ]
+    "typedef": [true, "call-signature", "parameter", "property-declaration", "member-variable-declaration"]
   },
   "linterOptions": {
     "exclude": ["**/*.css.d.ts", "node_modules/**/*.ts", "**/__mocks__/**/*", "**/*.js"]

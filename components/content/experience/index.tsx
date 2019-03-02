@@ -67,6 +67,10 @@ export default class Experience extends PureComponent {
     return (
       <div className={styles.experience}>
         <Section title={Anchors.Experience}>
+          <h2>Frontend Web Developer</h2>
+
+          <p>Sehr geehrte Frau Mächler</p>
+          <p>as</p>
           <Timeline items={this.items} />
         </Section>
       </div>

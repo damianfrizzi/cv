@@ -25,7 +25,6 @@ body {
   font-size: 16px;
 
   @media print {
-    font-size: 10px;
     -webkit-print-color-adjust: exact;
   }
 }
@@ -49,6 +48,7 @@ h2 {
 
 h2 {
   line-height: 1.25;
+  font-size: 1.9rem;
 }
 
 p {
@@ -82,14 +82,7 @@ a {
 
 :global(.container) {
   margin: 0 auto;
-  padding-right: 24px;
-  padding-left: 24px;
-  max-width: 1200px;
-
-  @media (min-width: 940px), print {
-    padding-right: 48px;
-    padding-left: 48px;
-  }
+  padding: 30px 60px 0;
 }
 
 .layout {

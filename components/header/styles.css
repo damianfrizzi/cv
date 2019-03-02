@@ -15,15 +15,6 @@
     margin-bottom: 18px;
   }
 
-  :global(.container) {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-column-gap: 60px;
-    grid-row-gap: 24px;
-    justify-items: center;
-    align-items: center;
-  }
-
   .imageWrapper {
     display: inline-flex;
     background: var(--primary-color);
@@ -45,11 +36,6 @@
     top: 0;
     left: 0;
     right: 0;
-
-    :global(.container) {
-      grid-template-columns: var(--image-width) auto;
-      justify-items: initial;
-    }
   }
 }
 

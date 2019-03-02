@@ -6,14 +6,6 @@ export default class Section extends PureComponent<ISectionProps> {
   public render(): ReactNode {
     const { children, title } = this.props
 
-    return (
-      <div className={`container ${styles.section}`}>
-        <h2 id={title} className={styles.title}>
-          {title}
-        </h2>
-
-        {children}
-      </div>
-    )
+    return <div className={`container ${styles.section}`}>{children}</div>
   }
 }

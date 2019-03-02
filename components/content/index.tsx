@@ -1,23 +1,19 @@
-import { PureComponent, ReactNode } from 'react'
-import PrintBreakBefore from '../print/breakbefore'
-import Education from './education'
-import Experience from './experience'
+import { FunctionComponent } from 'react'
+import { PrintBreakBefore } from '../print/breakbefore'
+import { Education } from './education'
+import { Experience } from './experience'
 import { Languages } from './languages'
-import Personal from './personal'
-import Skills from './skills'
+import { Personal } from './personal'
+import { Skills } from './skills'
 
-export default class Content extends PureComponent {
-  public render(): ReactNode {
-    return (
-      <main>
-        <Experience />
-        <PrintBreakBefore />
-        <Education />
-        <Skills />
-        <PrintBreakBefore />
-        <Languages />
-        <Personal />
-      </main>
-    )
-  }
-}
+export const Content: FunctionComponent = () => (
+  <main>
+    <Experience />
+    <PrintBreakBefore />
+    <Education />
+    <Skills />
+    <PrintBreakBefore />
+    <Languages />
+    <Personal />
+  </main>
+)

@@ -1,8 +1,4 @@
-import { PureComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styles from './styles.css'
 
-export default class PrintBreakBefore extends PureComponent {
-  public render(): ReactNode {
-    return <div className={styles.breakBefore} />
-  }
-}
+export const PrintBreakBefore: FunctionComponent = () => <div className={styles.breakBefore} />

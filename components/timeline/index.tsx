@@ -1,14 +1,12 @@
-import { PureComponent, ReactNode } from 'react'
-import Card from '../card'
+import { FunctionComponent } from 'react'
+import { Card } from '../card'
 import styles from './styles.css'
-import { ITimeLineItem, ITimelineProps } from './types'
+import { ITimelineProps } from './types'
 
-export default class Timeline extends PureComponent<ITimelineProps> {
-  public render(): ReactNode {
-    const { items } = this.props
-
-    return items.map((item: ITimeLineItem, i: number) => (
-      <article key={i} className={styles.timelineItem}>
+export const Timeline: FunctionComponent<ITimelineProps> = ({ items }) => (
+  <>
+    {items.map(item => (
+      <article key={item.title} className={styles.timelineItem}>
         <div className={styles.timeLineItemDeco} />
 
         <div className={styles.timeLineItemContent}>
@@ -30,6 +28,6 @@ export default class Timeline extends PureComponent<ITimelineProps> {
           </Card>
         </div>
       </article>
-    ))
-  }
-}
+    ))}
+  </>
+)

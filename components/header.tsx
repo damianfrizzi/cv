@@ -144,13 +144,12 @@ export const Header: FunctionComponent = () => (
       <Intro>
         <h1>Damian Frizzi</h1>
         <h2>Frontend Engineer</h2>
-
         <p>
-          This CV was created using Next.js, TypeScript and Pupeteer.
+          This CV was generated from a serverless deployment that I created with TypeScript, Next.js and Styled-Components.
           <br />
-          Checkout the source code at <a href="https://github.com/damianfrizzi/cv">github.com/damianfrizzi/cv</a>
+          You can checkout the source code at <a href="https://github.com/damianfrizzi/cv">GitHub</a>, have a look at the{' '}
+          <a href="https://dafri.io">online version</a> or <a href="https://dafri.io/pdf">generate the PDF on your own</a> by a serverless Chrome via Puppeteer.
         </p>
-
         <SubHeader>
           <ul>
             <li>

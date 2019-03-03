@@ -36,7 +36,7 @@ const genreatePdf = async (url, path = pathOnFileSystem, launchOptions) => {
     /** @type {import('puppeteer-core').PDFOptions} */
     const config = {
       format: 'A4',
-      path: './pdf/dev.pdf',
+      path,
       printBackground: true
     }
 

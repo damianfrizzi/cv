@@ -1,6 +1,13 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { Anchors } from './enums'
+
+export enum Anchors {
+  Experience = 'Experience',
+  Education = 'Education',
+  Skills = 'Technologies and Skills',
+  Languages = 'Languages',
+  Personal = 'Personal'
+}
 
 interface ISectionProps {
   title: Anchors

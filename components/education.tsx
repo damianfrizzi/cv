@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
-import { Anchors, Locations } from './enums'
-import { Section } from './section'
+import { Locations } from './experience'
+import { Anchors, Section } from './section'
 import { ITimeLineItem, Timeline } from './timeline'
 
 const items: ITimeLineItem[] = [

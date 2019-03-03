@@ -1,8 +1,7 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { Anchors } from './enums'
 import { PersonalItem } from './personalItem'
-import { Section } from './section'
+import { Anchors, Section } from './section'
 
 export interface IPersonalItem {
   title: string

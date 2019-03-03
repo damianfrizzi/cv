@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { Anchors } from './enums'
-import { Section } from './section'
+import { Anchors, Section } from './section'
 import { Skill } from './skill'
 
 export interface ISkill {

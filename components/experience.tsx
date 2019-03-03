@@ -1,8 +1,14 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { Anchors, Locations } from './enums'
-import { Section } from './section'
+import { Anchors, Section } from './section'
 import { ITimeLineItem, Timeline } from './timeline'
+
+export enum Locations {
+  DigitecGalaxus = 'Digitec Galaxus AG',
+  Glencore = 'Glencore International AG',
+  SAE = 'SAE Institute Zurich',
+  Akad = 'AKAD College'
+}
 
 const items: ITimeLineItem[] = [
   {

@@ -1,8 +1,13 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import { Card } from './card'
-import { Anchors, LanguageProficiencies } from './enums'
-import { Section } from './section'
+import { Anchors, Section } from './section'
+
+enum LanguageProficiencies {
+  Native = 'Native Language',
+  Fluent = 'Fluent',
+  Intermediate = 'Intermediate'
+}
 
 export interface ILanguage {
   title: string

@@ -1,11 +1,9 @@
 // @ts-check
 const { genreatePdf } = require('./generate')
 
-/**
- * Go to chrome://version/ and check executablePath
- * @type {import('puppeteer-core').LaunchOptions} ILaunchOptions
- */
+/** @type {import('puppeteer-core').LaunchOptions} ILaunchOptions */
 const launchOptions = {
+  // Go to chrome://version/ and check executablePath
   executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   headless: true
 }

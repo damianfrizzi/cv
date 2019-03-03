@@ -3,15 +3,19 @@ const chrome = require('chrome-aws-lambda')
 const puppeteer = require('puppeteer-core')
 
 /**
+ * @typedef {import('puppeteer-core').LaunchOptions} ILaunchOptions
  * @param {string} url
  * @param {string} [path]
+ * @param {ILaunchOptions} [launchOptions]
  */
-const genreatePdf = async (url, path) => {
-  const browser = await puppeteer.launch({
-    args: chrome.args,
-    executablePath: await chrome.executablePath,
-    headless: chrome.headless
-  })
+const genreatePdf = async (url, path, launchOptions) => {
+  const browser = await puppeteer.launch(
+    launchOptions || {
+      args: chrome.args,
+      executablePath: await chrome.executablePath,
+      headless: chrome.headless
+    }
+  )
   const page = await browser.newPage()
 
   /** @type {import('puppeteer-core').PDFOptions} */

@@ -1510,6 +1510,11 @@ chownr@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
 
+chrome-aws-lambda@1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.12.1.tgz#766f7e1a5585ff205c3f2f81ce1639dc26179d13"
+  integrity sha512-YsEC8v7qJk4vL1Ca6EHLcfVRpZlTY6FIMHXfEA6u0oS+GX0mG2mjGU6nHFEss4z9mL3S/RZYssHX3TH8fM7yNw==
+
 chrome-trace-event@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/chrome-trace-event/-/chrome-trace-event-1.0.0.tgz#45a91bd2c20c9411f0963b5aaeb9a1b95e09cc48"
@@ -3529,6 +3534,20 @@ punycode@^1.2.4:
 punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
+
+puppeteer-core@1.12.2:
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-1.12.2.tgz#f4797979aa9fde1045e52b343840f60500d5988e"
+  integrity sha512-M+atMV5e+MwJdR+OwQVZ1xqAIwh3Ou4nUxNuf334GwpcLG+LDj5BwIph4J9y8YAViByRtWGL+uF8qX2Ggzb+Fg==
+  dependencies:
+    debug "^4.1.0"
+    extract-zip "^1.6.6"
+    https-proxy-agent "^2.2.1"
+    mime "^2.0.3"
+    progress "^2.0.1"
+    proxy-from-env "^1.0.0"
+    rimraf "^2.6.1"
+    ws "^6.1.0"
 
 puppeteer@1.12.2:
   version "1.12.2"

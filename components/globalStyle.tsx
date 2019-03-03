@@ -27,14 +27,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 }
 
-@font-face {
-  font-family: 'Inter UI';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/static/Inter-UI.var.woff2') format('woff2-variations'), url('/static/Inter-UI-Regular.woff2') format('woff2'),
-    url('/static/Inter-UI-Regular.woff') format('woff');
-}
-
 html,
 body {
   font-size: 16px;
@@ -46,7 +38,7 @@ body {
 }
 
 body {
-  font-family: InterUI, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: #24292e;

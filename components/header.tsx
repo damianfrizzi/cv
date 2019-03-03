@@ -38,7 +38,7 @@ const Hexagon = styled.div`
     bottom: 12px;
     left: 12px;
     background-color: #ddd;
-    background-image: url(${process.env.imagePath});
+    background-image: url('/static/images/damian.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 10%;

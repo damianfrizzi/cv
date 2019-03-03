@@ -10,7 +10,7 @@ const launchOptions = {
 ;(async function() {
   try {
     const url = 'http://localhost:3000'
-    await genreatePdf(url, './pdf/dev.pdf', launchOptions)
+    await genreatePdf(url, launchOptions)
   } catch (e) {
     console.error(e.message)
   }

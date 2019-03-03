@@ -1,5 +1,12 @@
 {
   "version": 2,
   "name": "Damian's CV",
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "alias": ["dafri.io", "www.dafri.io"],
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "engines": {
+    "node": "7.4.0"
+  }
 }

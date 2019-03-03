@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Card } from './card'
 import { Anchors, LanguageProficiencies } from './enums'
-import styles from './languages.css'
 import { Section } from './section'
 
 export interface ILanguage {
@@ -28,15 +28,25 @@ const items: ILanguage[] = [
   }
 ]
 
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: var(--default-padding);
+
+  @media (min-width: 940px), print {
+    grid-template-columns: repeat(4, 1fr);
+  }
+`
+
 export const Languages: FunctionComponent = () => (
   <Section title={Anchors.Languages}>
-    <div className={styles.languagesWrapper}>
+    <Wrapper>
       {items.map(language => (
         <Card key={language.title}>
           <h2>{language.title}</h2>
           <small>{language.proficiency}</small>
         </Card>
       ))}
-    </div>
+    </Wrapper>
   </Section>
 )

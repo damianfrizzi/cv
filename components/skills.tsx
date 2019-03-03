@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Anchors } from './enums'
 import { Section } from './section'
 import { Skill } from './skill'
-import styles from './skills.css'
 
 export interface ISkill {
   category: string
@@ -76,12 +76,22 @@ const skills: ISkill[] = [
   }
 ]
 
+const SkillsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: var(--default-padding);
+
+  @media (min-width: 940px), print {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
 export const Skills: FunctionComponent = () => (
   <Section title={Anchors.Skills}>
-    <div className={styles.skillsWrapper}>
+    <SkillsWrapper>
       {skills.map(skill => (
         <Skill key={skill.category} skill={skill} />
       ))}
-    </div>
+    </SkillsWrapper>
   </Section>
 )

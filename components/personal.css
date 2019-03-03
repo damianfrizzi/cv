@@ -1,9 +1,0 @@
-.wrapper {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-gap: var(--default-padding);
-
-  @media (min-width: 940px), print {
-    grid-template-columns: 1fr 1fr;
-  }
-}

@@ -1,10 +1,114 @@
 import { FunctionComponent } from 'react'
-import styles from './header.css'
+import styled from 'styled-components'
 
 interface IIcon {
   path: string
   alt: string
 }
+
+const Intro = styled.div`
+  width: 100%;
+`
+
+const Hexagon = styled.div`
+  position: relative;
+  width: var(--image-width);
+  height: var(--image-height);
+  background: var(--primary-color);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    clip-path: inherit;
+  }
+
+  &::before {
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    background: #fff;
+  }
+
+  &::after {
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    background-color: #ddd;
+    background-image: url(/static/images/damian.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 10%;
+  }
+`
+
+const SubHeader = styled.div`
+  @media (min-width: 940px), print {
+    display: flex;
+
+    ul {
+      flex: 1;
+    }
+  }
+`
+
+const Wrapper = styled.div`
+  position: relative;
+  padding: 24px 0;
+
+  h1 {
+    margin-top: -12px;
+  }
+
+  h2 {
+    margin: -6px 0 12px;
+    font-weight: 300;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 60px;
+    grid-row-gap: 24px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @media print {
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  @media (min-width: 940px), print {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .container {
+      grid-template-columns: var(--image-width) auto;
+      justify-items: initial;
+    }
+  }
+`
+
+const ImageWrapper = styled.div`
+  display: inline-flex;
+  background: var(--primary-color);
+  border-radius: 50%;
+  padding: 6px;
+  margin-right: 6px;
+  vertical-align: middle;
+`
 
 const githubIcon: IIcon = {
   path: '/static/images/github.svg',
@@ -28,16 +132,16 @@ const pinIcon: IIcon = {
 }
 
 const getIcon: FunctionComponent<IIcon> = icon => (
-  <div className={styles.imageWrapper}>
+  <ImageWrapper>
     <img width={16} height={16} src={icon.path} alt={icon.alt} />
-  </div>
+  </ImageWrapper>
 )
 
 export const Header: FunctionComponent = () => (
-  <div className={styles.header}>
+  <Wrapper>
     <div className={'container'}>
-      <div className={styles.hexagon} />
-      <div className={styles.intro}>
+      <Hexagon />
+      <Intro>
         <h1>Damian Frizzi</h1>
         <h2>Frontend Engineer</h2>
 
@@ -47,7 +151,7 @@ export const Header: FunctionComponent = () => (
           Checkout the source code at <a href="https://github.com/damianfrizzi/cv">github.com/damianfrizzi/cv</a>
         </p>
 
-        <div className={styles.subHeader}>
+        <SubHeader>
           <ul>
             <li>
               {getIcon(githubIcon)}
@@ -77,8 +181,8 @@ export const Header: FunctionComponent = () => (
               &nbsp; Gerbiweg 20, 8910 Affoltern am Albis
             </li>
           </ul>
-        </div>
-      </div>
+        </SubHeader>
+      </Intro>
     </div>
-  </div>
+  </Wrapper>
 )

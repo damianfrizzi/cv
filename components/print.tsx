@@ -1,4 +1,8 @@
 import { FunctionComponent } from 'react'
-import styles from './print.css'
+import styled from 'styled-components'
 
-export const PrintBreakBefore: FunctionComponent = () => <div className={styles.breakBefore} />
+const Container = styled.div`
+  page-break-before: always;
+`
+
+export const PrintBreakBefore: FunctionComponent = () => <Container />

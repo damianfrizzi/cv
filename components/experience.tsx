@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Anchors, Locations } from './enums'
-import styles from './experience.css'
 import { Section } from './section'
 import { ITimeLineItem, Timeline } from './timeline'
 
@@ -60,10 +60,33 @@ const items: ITimeLineItem[] = [
     ]
   }
 ]
+
+const Wrapper = styled.div`
+  ul {
+    position: relative;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.2em;
+
+    li {
+      @media print {
+        padding: 0;
+      }
+
+      &::before {
+        content: '-';
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+      }
+    }
+  }
+`
+
 export const Experience: FunctionComponent = () => (
-  <div className={styles.experience}>
+  <Wrapper>
     <Section title={Anchors.Experience}>
       <Timeline items={items} />
     </Section>
-  </div>
+  </Wrapper>
 )

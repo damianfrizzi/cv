@@ -1,15 +1,21 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Card } from './card'
 import { IPersonalItem } from './personal'
-import styles from './personalItem.css'
 
 interface IPersonalItemProps {
   item: IPersonalItem
 }
 
+const Item = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: var(--default-padding);
+`
+
 export const PersonalItem: FunctionComponent<IPersonalItemProps> = ({ item }) => (
   <Card>
-    <div className={styles.item}>
+    <Item>
       <img src={item.image} width={90} height={90} alt={item.alt} />
 
       <div>
@@ -18,6 +24,6 @@ export const PersonalItem: FunctionComponent<IPersonalItemProps> = ({ item }) =>
           <p key={i}>{paragraph}</p>
         ))}
       </div>
-    </div>
+    </Item>
   </Card>
 )

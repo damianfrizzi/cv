@@ -1,17 +1,23 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Anchors } from './enums'
-import styles from './section.css'
 
 interface ISectionProps {
   title: Anchors
 }
 
-export const Section: FunctionComponent<ISectionProps> = ({ children, title }) => (
-  <div className={`container ${styles.section}`}>
-    <h2 id={title} className={styles.title}>
-      {title}
-    </h2>
+const Container = styled.div`
+  position: relative;
+  padding-bottom: 24px;
+`
 
+const Title = styled.h2`
+  padding: 3rem 0;
+`
+
+export const Section: FunctionComponent<ISectionProps> = ({ children, title }) => (
+  <Container className="container">
+    <Title>{title}</Title>
     {children}
-  </div>
+  </Container>
 )

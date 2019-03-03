@@ -1,5 +1,0 @@
-.item {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: var(--default-padding);
-}

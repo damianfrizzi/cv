@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Anchors } from './enums'
-import styles from './personal.css'
 import { PersonalItem } from './personalItem'
 import { Section } from './section'
 
@@ -38,12 +38,22 @@ const items: IPersonalItem[] = [
   }
 ]
 
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: var(--default-padding);
+
+  @media (min-width: 940px), print {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
 export const Personal: FunctionComponent = () => (
   <Section title={Anchors.Personal}>
-    <div className={styles.wrapper}>
+    <Wrapper>
       {items.map(item => (
         <PersonalItem key={item.title} item={item} />
       ))}
-    </div>
+    </Wrapper>
   </Section>
 )

@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
 :root {
   --primary-color: #e74c3c;
   --primary-hover-color: #862318;
@@ -22,10 +25,6 @@
     background: var(--primary-color);
     color: #fff;
   }
-}
-
-@page {
-  margin: 0;
 }
 
 @font-face {
@@ -96,7 +95,7 @@ a {
   }
 }
 
-:global(.container) {
+.container {
   margin: 0 auto;
   padding-right: 24px;
   padding-left: 24px;
@@ -108,6 +107,7 @@ a {
   }
 }
 
-.layout {
-  background: #f6f7f8;
+@page {
+  margin: 0;
 }
+`

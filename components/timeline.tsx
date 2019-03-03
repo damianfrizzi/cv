@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
+import styled from 'styled-components'
 import { Card } from './card'
-import styles from './timeline.css'
 
 interface ITimelineProps {
   items: ITimeLineItem[]
@@ -15,13 +15,73 @@ export interface ITimeLineItem {
   dateTo: string
 }
 
+const TimelineContent = styled.div`
+  margin: 0 0 3rem 4.5rem;
+
+  @media print {
+    margin-left: 6rem;
+  }
+
+  ul {
+    margin-top: 1rem;
+  }
+`
+
+const TimelineDeco = styled.div`
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  bottom: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    top: -0.0625rem;
+    left: 0.125rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: #fff;
+    border: #fff 0.1875rem solid;
+    box-shadow: var(--primary-color) 0 0 0 0.125rem;
+  }
+
+  &::after {
+    top: 1.2rem;
+    left: 0.6875rem;
+    transform: translateX(-50%);
+    bottom: -4.5rem;
+    width: 0.125rem;
+    background: var(--primary-color);
+  }
+`
+
+const TimelineItem = styled.article`
+  position: relative;
+  break-inside: avoid;
+
+  &:last-child {
+    ${TimelineContent} {
+      margin-bottom: 0;
+    }
+
+    ${TimelineDeco}::after {
+      content: none;
+    }
+  }
+`
+
 export const Timeline: FunctionComponent<ITimelineProps> = ({ items }) => (
   <>
     {items.map(item => (
-      <article key={item.title} className={styles.timelineItem}>
-        <div className={styles.timeLineItemDeco} />
+      <TimelineItem key={item.title}>
+        <TimelineDeco />
 
-        <div className={styles.timeLineItemContent}>
+        <TimelineContent>
           <Card>
             <h2>
               {item.title} <small>@{item.location}</small>
@@ -32,14 +92,14 @@ export const Timeline: FunctionComponent<ITimelineProps> = ({ items }) => (
             {item.description && <p>{item.description}</p>}
             {item.paragraphs && (
               <ul>
-                {item.paragraphs.map((paragraph: string, j: number) => (
-                  <li key={j}>{paragraph}</li>
+                {item.paragraphs.map((paragraph, i) => (
+                  <li key={`paragraph-${i}`}>{paragraph}</li>
                 ))}
               </ul>
             )}
           </Card>
-        </div>
-      </article>
+        </TimelineContent>
+      </TimelineItem>
     ))}
   </>
 )

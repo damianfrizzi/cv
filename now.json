@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/pdf",
-      "dest": "/pdf.js",
+      "dest": "/pdf/index.js",
       "headers": {
         "cache-control": "max-age=3600"
       }

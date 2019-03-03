@@ -345,7 +345,7 @@ var Intro = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withCo
 var Hexagon = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "header__Hexagon",
   componentId: "sc-12tpx8a-1"
-})(["position:relative;width:var(--image-width);height:var(--image-height);background:var(--primary-color);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);&::before,&::after{content:'';position:absolute;clip-path:inherit;}&::before{top:6px;right:6px;bottom:6px;left:6px;background:#fff;}&::after{top:12px;right:12px;bottom:12px;left:12px;background-color:#ddd;background-image:url(/static/images/damian.jpg);background-repeat:no-repeat;background-size:cover;background-position:center 10%;}"]);
+})(["position:relative;width:var(--image-width);height:var(--image-height);background:var(--primary-color);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);&::before,&::after{content:'';position:absolute;clip-path:inherit;}&::before{top:6px;right:6px;bottom:6px;left:6px;background:#fff;}&::after{top:12px;right:12px;bottom:12px;left:12px;background-color:#ddd;background-image:url(", ");background-repeat:no-repeat;background-size:cover;background-position:center 10%;}"], "/static/images/damian.jpg");
 var SubHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "header__SubHeader",
   componentId: "sc-12tpx8a-2"

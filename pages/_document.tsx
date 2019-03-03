@@ -32,8 +32,9 @@ export default class CustomDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <meta content="Website built with Next.js which can be exported as a pdf. " name="description" />
+          <meta content="Website built with Next.js which can be exported as a pdf." name="description" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet" />
         </Head>
         <body>
           <Main />

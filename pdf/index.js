@@ -1,12 +1,13 @@
+// @ts-check
 const { genreatePdf } = require('./generate')
 
 module.exports = /**
- * @param {import('http').IncomingMessage} req
+ * @param {import('http').IncomingMessage} _req
  * @param {import('http').ServerResponse} res
- */ async function(req, res) {
+ */ async function(_req, res) {
   try {
     const url = 'https://dafri.io'
-    const file = await getPdf(url)
+    const file = await genreatePdf(url)
 
     res.statusCode = 200
     res.setHeader('Content-Type', 'application/pdf')

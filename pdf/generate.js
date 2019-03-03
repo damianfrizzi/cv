@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer-core')
 
 /**
  * @param {string} url
- * @param {string | undefined} path
+ * @param {string} [path]
  */
 const genreatePdf = async (url, path) => {
   const browser = await puppeteer.launch({

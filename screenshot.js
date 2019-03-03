@@ -1,15 +1,37 @@
-const { getScreenshot } = require('./chromium')
+const chrome = require('chrome-aws-lambda')
+const puppeteer = require('puppeteer-core')
+
+/**
+ * @param {string} url
+ */
+async function getPdf(url) {
+  const browser = await puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless
+  })
+
+  const page = await browser.newPage()
+
+  await page.goto(url, { waitUntil: 'networkidle2' })
+  const file = await page.pdf({
+    format: 'A4',
+    printBackground: true
+  })
+
+  await browser.close()
+  return file
+}
 
 module.exports = /**
  * @param {import('http').IncomingMessage} req
  * @param {import('http').ServerResponse} res
  */ async function(req, res) {
   try {
-    const type = 'png'
     const url = 'https://dafri.io'
-    const file = await getScreenshot(url, type, undefined, undefined)
+    const file = await getPdf(url)
     res.statusCode = 200
-    res.setHeader('Content-Type', `image/${type}`)
+    res.setHeader('Content-Type', `application/pdf`)
     res.end(file)
   } catch (e) {
     res.statusCode = 500

@@ -6,7 +6,7 @@
     "dev": "next",
     "dev:debug": "yarn dev --inspect=localhost:9227",
     "build": "next build",
-    "export": "rm -rf docs && yarn build && next export -o docs && node ghPages",
+    "now-build": "next build",
     "start": "next start",
     "generatePdf": "ts-node --project tsconfig.pdf.json toPdf.ts http://localhost:3000 .next/cv.pdf"
   },

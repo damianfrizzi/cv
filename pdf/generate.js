@@ -4,7 +4,7 @@ const chrome = require('chrome-aws-lambda')
 const puppeteer = require('puppeteer-core')
 
 const fileSystemCacheTTL = 3600 // seconds
-const pathOnFileSystem = './pdf/dev.pdf'
+const pathOnFileSystem = process.env.NODE_ENV === 'production' ? '/tmp/pdf/dev.pdf' : '/pdf/dev.pdf'
 
 /**
  * @typedef {import('puppeteer-core').LaunchOptions} ILaunchOptions

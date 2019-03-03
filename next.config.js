@@ -4,6 +4,9 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const reponame = 'cv'
 
 module.exports = withPlugins([withTypescript], {
+  env: {
+    imagePath: process.env.NODE_ENV === 'production' ? `/${reponame}/static/images/damian.jpg` : '/static/images/damian.jpg'
+  },
   assetPrefix: process.env.NODE_ENV === 'production' ? `/${reponame}` : '',
   webpack(config, options) {
     // Do not run type checking twice:

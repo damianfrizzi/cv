@@ -30,9 +30,9 @@ module.exports = /**
   try {
     const url = 'https://dafri.io'
     const file = await getPdf(url)
+
     res.statusCode = 200
-    res.setHeader('Content-Type', `application/pdf`)
-    res.setHeader('Cache-Control', 'max-age=3600')
+    res.setHeader('Content-Type', 'application/pdf')
     res.end(file)
   } catch (e) {
     res.statusCode = 500

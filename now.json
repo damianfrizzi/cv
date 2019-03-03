@@ -5,9 +5,20 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "builds": [{ "src": "screenshot.js", "use": "@now/node", "config": { "maxLambdaSize": "40mb" } }, { "src": "next.config.js", "use": "@now/next" }],
+  "builds": [{ "src": "pdf.js", "use": "@now/node", "config": { "maxLambdaSize": "40mb" } }, { "src": "next.config.js", "use": "@now/next" }],
   "routes": [
-    { "src": "/pdf", "dest": "/screenshot.js" },
-    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable" } }
+    {
+      "src": "/pdf",
+      "dest": "/pdf.js",
+      "headers": {
+        "cache-control": "max-age=3600"
+      }
+    },
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": {
+        "cache-control": "immutable"
+      }
+    }
   ]
 }

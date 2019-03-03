@@ -12,13 +12,8 @@ const pathOnFileSystem = '/tmp/pdf/dev.pdf'
  * @param {string} [path]
  * @param {ILaunchOptions} [launchOptions]
  */
-const genreatePdf = async (url, path = pathOnFileSystem, launchOptions) => {
-  try {
-    return await getFromFileSystem(path)
-  } catch (err) {
-    console.log(err)
-    return await getFromBrowser(url, path, launchOptions)
-  }
+const genreatePdf = (url, path = pathOnFileSystem, launchOptions) => {
+  return getFromFileSystem(path).catch(_err => getFromBrowser(url, path, launchOptions))
 }
 
 /** @param {string} path */

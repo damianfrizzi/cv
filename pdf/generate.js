@@ -4,23 +4,24 @@ const chrome = require('chrome-aws-lambda')
 const puppeteer = require('puppeteer-core')
 
 const fileSystemCacheTTL = 3600 // seconds
-const pathOnFileSystem = process.env.NODE_ENV === 'production' ? '/tmp/pdf/dev.pdf' : '/pdf/dev.pdf'
+const pathOnFileSystem = '/tmp/pdf/dev.pdf'
 
 /**
  * @typedef {import('puppeteer-core').LaunchOptions} ILaunchOptions
  * @param {string} url
+ * @param {string} [path]
  * @param {ILaunchOptions} [launchOptions]
  */
-const genreatePdf = async (url, launchOptions) => {
+const genreatePdf = async (url, path = pathOnFileSystem, launchOptions) => {
   try {
-    const stats = fs.statSync(pathOnFileSystem)
+    const stats = fs.statSync(path)
     const lastModified = (new Date().getTime() - new Date(stats.mtime).getTime()) / 1000
 
     if (stats.isFile && lastModified <= fileSystemCacheTTL) {
-      const file = fs.readFileSync(pathOnFileSystem)
+      const file = fs.readFileSync(path)
       return file
     } else {
-      throw Error('Cache miss')
+      throw 'Cache miss'
     }
   } catch (_err) {
     const browser = await puppeteer.launch(

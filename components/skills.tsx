@@ -31,8 +31,8 @@ const skills: ISkill[] = [
   {
     category: 'HTML & CSS',
     expertise: 95,
-    keywordsProficient: ['HTML5', 'CSS', 'CSS Modules', 'Sass'],
-    keywordsBasic: ['Styled Components', 'Less', 'Stylus']
+    keywordsProficient: ['HTML5', 'CSS', 'Styled Components', 'CSS Modules', 'Sass'],
+    keywordsBasic: ['Less', 'Stylus']
   },
   {
     category: 'Version Control',
@@ -43,7 +43,7 @@ const skills: ISkill[] = [
   {
     category: 'Testing',
     expertise: 80,
-    keywordsProficient: ['Unit & UI Testing (Snapshot & E2E)', 'react-testing-library', 'Enzyme', 'Jest', 'Chai', 'Cypress'],
+    keywordsProficient: ['react-testing-library', 'Enzyme', 'Jest', 'Chai', 'Cypress'],
     keywordsBasic: ['Browser Stack Live', 'Selenium']
   },
   {

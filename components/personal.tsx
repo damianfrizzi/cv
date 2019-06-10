@@ -24,7 +24,7 @@ const items: IPersonalItem[] = [
     title: 'Web Development',
     paragraphs: [
       `I designed my first website 15 years ago with sliced graphics, table based layouts, framesets and fancy marquees.`,
-      `Currently I'm developing a universal Progressive Web Application to find unused CSS on a website using ES2015, React, Node.js and Nightmare (incl. Electron).`
+      `Currently I'm developing a universal Progressive Web Application to find unused CSS on a website using React, Node.js and Nightmare (incl. Electron).`
     ],
     alt: 'Web Development',
     image: '/static/images/development.svg'

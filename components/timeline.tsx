@@ -16,7 +16,11 @@ export interface ITimeLineItem {
 }
 
 const TimelineContent = styled.div`
-  margin: 0 0 3rem 4.5rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: 940px), print {
+    margin: 0 0 3rem 4.5rem;
+  }
 
   @media print {
     margin-left: 6rem;
@@ -28,10 +32,15 @@ const TimelineContent = styled.div`
 `
 
 const TimelineDeco = styled.div`
+  display: none;
   position: absolute;
   left: 0;
   top: 1.5rem;
   bottom: 0;
+
+  @media (min-width: 940px), print {
+    display: block;
+  }
 
   &::before,
   &::after {

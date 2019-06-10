@@ -28,8 +28,10 @@ const Span = styled.span`
 `
 
 const Paragraph = styled.p`
-  display: flex;
-  align-items: baseline;
+  @media (min-width: 940px), print {
+    display: flex;
+    align-items: baseline;
+  }
 `
 
 export const Skill: FunctionComponent<ISkillProps> = ({ skill }) => (

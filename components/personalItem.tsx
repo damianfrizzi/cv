@@ -8,9 +8,16 @@ interface IPersonalItemProps {
 }
 
 const Item = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: var(--default-padding);
+  img {
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  @media (min-width: 940px), print {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: var(--default-padding);
+  }
 `
 
 export const PersonalItem: FunctionComponent<IPersonalItemProps> = ({ item }) => (

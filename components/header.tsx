@@ -72,6 +72,11 @@ const Wrapper = styled.div`
     margin-bottom: 18px;
   }
 
+  li {
+    display: flex;
+    align-items: center;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 100%;
@@ -106,7 +111,7 @@ const ImageWrapper = styled.div`
   background: var(--primary-color);
   border-radius: 50%;
   padding: 6px;
-  margin-right: 6px;
+  margin-right: 0.75rem;
   vertical-align: middle;
 `
 
@@ -154,12 +159,10 @@ export const Header: FunctionComponent = () => (
           <ul>
             <li>
               {getIcon(githubIcon)}
-              &nbsp;
               <a href="https://github.com/damianfrizzi">github.com/damianfrizzi</a>
             </li>
             <li>
               {getIcon(twitterIcon)}
-              &nbsp;
               <a href="https://twitter.com/damianfrizzi">twitter.com/damianfrizzi</a>
             </li>
           </ul>
@@ -167,17 +170,15 @@ export const Header: FunctionComponent = () => (
           <ul>
             <li>
               {getIcon(emailIcon)}
-              &nbsp;
               <a href="mailto:damianfrizzi@gmail.com">damianfrizzi@gmail.com</a>
             </li>
             <li>
               {getIcon(phoneIcon)}
-              &nbsp;
               <a href="tel:+41 79 739§ 03 27">+41 79 739 03 27</a>
             </li>
             <li>
               {getIcon(pinIcon)}
-              &nbsp; Hagenholzstrasse 84, 8050 Zürich
+              Hagenholzstrasse 84, 8050 Zürich
             </li>
           </ul>
         </SubHeader>

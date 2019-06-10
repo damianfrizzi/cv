@@ -177,7 +177,7 @@ export const Header: FunctionComponent = () => (
             </li>
             <li>
               {getIcon(pinIcon)}
-              &nbsp; Gerbiweg 20, 8910 Affoltern am Albis
+              &nbsp; Hagenholzstrasse 84, 8050 Zürich
             </li>
           </ul>
         </SubHeader>

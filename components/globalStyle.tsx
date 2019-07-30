@@ -38,6 +38,7 @@ body {
 }
 
 body {
+  font-display: swap;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.5;

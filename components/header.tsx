@@ -150,10 +150,9 @@ export const Header: FunctionComponent = () => (
         <h1>Damian Frizzi</h1>
         <h2>Frontend Engineer</h2>
         <p>
-          This CV was generated from a serverless deployment that I created with TypeScript, Next.js and Styled-Components.
-          <br />
-          You can checkout the source code at <a href="https://github.com/damianfrizzi/cv">GitHub</a>, have a look at the{' '}
-          <a href="https://dafri.io">online version</a> or <a href="https://dafri.io/pdf">generate the PDF on your own</a> by a serverless Chrome via Puppeteer.
+          This CV was created using TypeScript, Next.js, and Styled Components. It can either be viewed as a static, automatically deployed site at{' '}
+          <a href="https://dafri.io">dafri.io</a> or as a PDF generated using Puppeteer when accessing <a href="https://dafri.io/pdf">dafri.io/pdf</a>. The
+          source code is available on <a href="https://github.com/damianfrizzi/cv">GitHub</a>.
         </p>
         <SubHeader>
           <ul>

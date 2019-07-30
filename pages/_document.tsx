@@ -34,11 +34,10 @@ export default class CustomDocument extends Document {
           <meta charSet="utf-8" />
           <meta content="CV of Frontend Engineer Damian Frizzi as a static website or PDF" name="description" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+          <meta name="theme-color" content="#e74c3c" />
           <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet" />
           <link href="/static/manifest.json" rel="manifest" />
-          <meta name="theme-color" content="#e74c3c" />
-          {/* TODO */}
-          {/* <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" /> */}
+          <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
         </Head>
         <body>
           <Main />

@@ -1,0 +1,22 @@
+{
+  "short_name": "CV",
+  "name": "Damian's CV",
+  "theme_color": "#e74c3c",
+  "background_color": "#e74c3c",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "splash_pages": null,
+  "icons": [
+    {
+      "src": "/static/images/pwa-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/images/pwa-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

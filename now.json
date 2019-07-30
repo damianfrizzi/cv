@@ -15,10 +15,9 @@
       }
     },
     {
-      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
-      "headers": {
-        "cache-control": "immutable"
-      }
+      "src": "/_next/static/(.*)",
+      "headers": { "cache-control": "max-age=31557600" },
+      "dest": "/_next/static/$1"
     }
   ]
 }

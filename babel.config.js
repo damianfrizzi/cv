@@ -4,7 +4,7 @@ module.exports = function babelConfig(api = null) {
   }
 
   return {
-    presets: ['next/babel', '@zeit/next-typescript/babel'],
+    presets: ['next/babel'],
     plugins: [['styled-components', { ssr: true }]]
   }
 }

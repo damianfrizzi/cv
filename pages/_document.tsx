@@ -35,9 +35,10 @@ export default class CustomDocument extends Document {
           <meta content="CV of Frontend Engineer Damian Frizzi as a static website or PDF" name="description" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           <meta name="theme-color" content="#e74c3c" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet" />
           <link href="/static/manifest.json" rel="manifest" />
           <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+          <script dangerouslySetInnerHTML={{ __html: checkForWebPSupport }} />
         </Head>
         <body>
           <Main />
@@ -47,3 +48,6 @@ export default class CustomDocument extends Document {
     )
   }
 }
+
+// This checks for webp support and adds a class "webp" or "no-webp" to the html element
+const checkForWebPSupport = `(async()=>{if(!self.createImageBitmap)return!1;const e=await fetch("data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=").then(e=>e.blob()),A=await createImageBitmap(e).then(()=>!0,()=>!1);document.querySelectorAll("html")[0].classList.add(A?"webp":"no-webp")})();`

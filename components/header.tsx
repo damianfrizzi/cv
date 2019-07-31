@@ -32,13 +32,20 @@ const Hexagon = styled.div`
     background: #fff;
   }
 
+  .webp &::after {
+    background-image: url('/static/images/damian-min.webp');
+  }
+
+  .no-webp &::after {
+    background-image: url('/static/images/damian-min.jpg');
+  }
+
   &::after {
     top: 12px;
     right: 12px;
     bottom: 12px;
     left: 12px;
     background-color: #ddd;
-    background-image: url('/static/images/damian-min.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 10%;

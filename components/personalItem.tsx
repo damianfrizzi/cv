@@ -1,12 +1,13 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { IPersonalItem } from '../models/personal.model'
 import { Card } from './card'
-import { IPersonalItem } from './personal'
 
 interface IPersonalItemProps {
   item: IPersonalItem
 }
 
+// TODO
 const Item = styled.div`
   img {
     display: block;

@@ -1,10 +1,10 @@
-import { ISkill } from 'components/skills'
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { ISkillItem } from '../models/skills.model'
 import { Card } from './card'
 
 interface ISkillProps {
-  skill: ISkill
+  skill: ISkillItem
 }
 
 const ExpertiseWrapper = styled.div`

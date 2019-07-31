@@ -2,10 +2,6 @@ import { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import { Card } from './card'
 
-interface ITimelineProps {
-  items: ITimeLineItem[]
-}
-
 export interface ITimeLineItem {
   title: string
   location: string
@@ -13,6 +9,10 @@ export interface ITimeLineItem {
   paragraphs?: string[]
   dateFrom: string
   dateTo: string
+}
+
+interface ITimelineProps {
+  items: ITimeLineItem[]
 }
 
 const TimelineContent = styled.div`

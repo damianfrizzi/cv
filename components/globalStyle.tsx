@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   --primary-color: #e74c3c;
   --primary-hover-color: #862318;
   --default-padding: 24px;
+  --default-negative-padding: -24px;
   --image-width: 168px;
   --image-height: 192px;
 }

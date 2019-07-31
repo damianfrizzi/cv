@@ -50,4 +50,4 @@ export default class CustomDocument extends Document {
 }
 
 // This checks for webp support and adds a class "webp" or "no-webp" to the html element
-const checkForWebPSupport = `(async()=>{if(!self.createImageBitmap)return!1;const e=await fetch("data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=").then(e=>e.blob()),A=await createImageBitmap(e).then(()=>!0,()=>!1);document.querySelectorAll("html")[0].classList.add(A?"webp":"no-webp")})();`
+const checkForWebPSupport = `var webPsupport=function(){var A=new Image;A.onload=WebP.onerror=function(){callback(2==A.height)},A.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA"};document.querySelectorAll("html")[0].classList.add(webPsupport?"webp":"no-webp");`

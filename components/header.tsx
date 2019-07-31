@@ -71,17 +71,8 @@ const Wrapper = styled.div`
   position: relative;
   padding: 24px 0;
 
-  h1 {
-    margin-top: -12px;
-  }
-
-  h2 {
-    margin: -6px 0 12px;
-    font-weight: 300;
-  }
-
   p {
-    margin-bottom: 18px;
+    margin-bottom: ${props => props.theme.spacing(2)};
   }
 
   li {
@@ -160,7 +151,7 @@ export const Header: FunctionComponent = () => (
       <Hexagon />
       <Intro>
         <h1>Damian Frizzi</h1>
-        <h2>Frontend Engineer</h2>
+        <h3>Frontend Engineer</h3>
         <p>
           This CV was created using TypeScript, Next.js, and Styled Components. It can either be viewed as a static, automatically deployed site at{' '}
           <a href="https://dafri.io">dafri.io</a> or as a PDF generated using Puppeteer when accessing <a href="https://dafri.io/pdf">dafri.io/pdf</a>. The

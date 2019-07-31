@@ -19,7 +19,7 @@ const StripeItem: FunctionComponent<IStripeProps> = styled.div`
     overflow: hidden;
     transform: skewY(2deg);
     background: #fff;
-    margin-bottom: -24px;
+    margin-bottom: ${props => props.theme.spacing(-3)};
   }
 
   @media print {

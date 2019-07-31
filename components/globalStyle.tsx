@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 :root {
-  --primary-color: #d13800;
+  --primary-color: #e74c3c;
   --primary-hover-color: #862318;
   --default-padding: 24px;
   --default-negative-padding: -24px;

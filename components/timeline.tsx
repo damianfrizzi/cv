@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from '../theme'
 import { Card } from './card'
 
 export interface ITimeLineItem {
@@ -15,15 +16,9 @@ interface ITimelineProps {
   items: ITimeLineItem[]
 }
 
+const timelineItemMarginBottom = theme.spacing(5)
+
 const TimelineContent = styled.div`
-  @media (min-width: 940px), print {
-    margin: 0 0 3rem 4.5rem;
-  }
-
-  @media print {
-    margin-left: 6rem;
-  }
-
   ul {
     margin-top: 1rem;
   }
@@ -31,52 +26,46 @@ const TimelineContent = styled.div`
 
 const TimelineDeco = styled.div`
   display: none;
-  position: absolute;
-  left: 0;
-  top: 1.5rem;
-  bottom: 0;
+  position: relative;
+  padding: ${props => props.theme.spacing(3)} 0;
 
   @media (min-width: 940px), print {
     display: block;
   }
+`
 
-  &::before,
+const TimelineDecoCircle = styled.div`
+  width: ${props => props.theme.spacing(3)};
+  height: ${props => props.theme.spacing(3)};
+  border-radius: 50%;
+  box-shadow: inset ${props => props.theme.primaryColor} 0 0 0 0.125rem;
+  background: #fff;
+
   &::after {
     content: '';
     position: absolute;
-  }
-
-  &::before {
-    top: -0.0625rem;
-    left: 0.125rem;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: #fff;
-    border: #fff 0.1875rem solid;
-    box-shadow: ${props => props.theme.primaryColor} 0 0 0 0.125rem;
-  }
-
-  &::after {
-    top: 1.2rem;
-    left: 0.6875rem;
-    transform: translateX(-50%);
-    bottom: -4.5rem;
+    top: ${props => props.theme.spacing(6)};
+    height: ${`calc(100% + ${timelineItemMarginBottom})`};
     width: 0.125rem;
+    left: 50%;
+    transform: translateX(-50%);
     background: ${props => props.theme.primaryColor};
   }
 `
 
 const TimelineItem = styled.article`
-  position: relative;
-  break-inside: avoid;
+  @media (min-width: 940px), print {
+    position: relative;
+    break-inside: avoid;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: ${props => props.theme.spacing(7)};
 
-  &:last-child {
-    ${TimelineContent} {
-      margin-bottom: 0;
+    & + & {
+      margin-top: ${timelineItemMarginBottom};
     }
 
-    ${TimelineDeco}::after {
+    &:last-child ${TimelineDecoCircle}::after {
       content: none;
     }
   }
@@ -86,7 +75,9 @@ export const Timeline: FunctionComponent<ITimelineProps> = ({ items }) => (
   <>
     {items.map(item => (
       <TimelineItem key={item.title}>
-        <TimelineDeco />
+        <TimelineDeco>
+          <TimelineDecoCircle />
+        </TimelineDeco>
 
         <TimelineContent>
           <Card>

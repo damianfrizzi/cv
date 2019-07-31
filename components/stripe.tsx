@@ -19,17 +19,18 @@ const StripeItem: FunctionComponent<IStripeProps> = styled.div`
     overflow: hidden;
     transform: skewY(2deg);
     background: #fff;
+    margin-top: ${props => props.theme.spacing(-4)};
     margin-bottom: ${props => props.theme.spacing(-3)};
   }
 
   @media print {
-    height: 240px;
+    height: 260px;
   }
 
   ${(props: IStripeProps) =>
     props.position === Stripes.Top &&
     `@media (min-width: 940px), screen {
-      height: 330px;
+      height: 342px;
     }`}
 
   ${(props: IStripeProps) =>

@@ -1,30 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-:root {
-  --primary-color: #e74c3c;
-  --link-color: #d13800;
-  --link-hover-color: #862318;
-  --default-padding: 24px;
-  --default-negative-padding: -24px;
-  --image-width: 168px;
-  --image-height: 192px;
-}
-
-@media print {
-  :root {
-    --default-padding: 12px;
-    --image-width: 148px;
-    --image-height: 172px;
-  }
-}
-
 * {
   padding: 0;
   margin: 0;
 
   &::selection {
-    background: var(--primary-color);
+    background: ${props => props.theme.primaryColor};
     color: #fff;
   }
 }
@@ -78,7 +60,7 @@ li {
 }
 
 a {
-  color: var(--link-color);
+  color: ${props => props.theme.linkColor};
   text-decoration: none;
   border-bottom: transparent 2px solid;
   transition: all 0.25s ease;
@@ -89,8 +71,8 @@ a {
   vertical-align: middle;
 
   &:hover {
-    color: var(--link-hover-color);
-    border-color: var(--link-hover-color);
+    color: ${props => props.theme.linkHoverColor};
+    border-color: ${props => props.theme.linkHoverColor};
   }
 }
 

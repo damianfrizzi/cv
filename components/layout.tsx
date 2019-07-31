@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { FunctionComponent } from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+import { theme } from '../theme'
 import { Content } from './content'
 import { GlobalStyle } from './globalStyle'
 import { Header } from './header'
@@ -11,14 +12,16 @@ const Wrapper = styled.div`
 `
 
 export const Layout: FunctionComponent = () => (
-  <Wrapper>
-    <Head>
-      <title>Damian Frizzi - Frontend Engineer</title>
-    </Head>
-    <GlobalStyle />
-    <Stripe position={Stripes.Top} />
-    <Header />
-    <Content />
-    <Stripe position={Stripes.Bottom} />
-  </Wrapper>
+  <ThemeProvider theme={theme}>
+    <Wrapper>
+      <Head>
+        <title>Damian Frizzi - Frontend Engineer</title>
+      </Head>
+      <GlobalStyle />
+      <Stripe position={Stripes.Top} />
+      <Header />
+      <Content />
+      <Stripe position={Stripes.Bottom} />
+    </Wrapper>
+  </ThemeProvider>
 )

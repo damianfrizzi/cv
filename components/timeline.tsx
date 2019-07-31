@@ -54,7 +54,7 @@ const TimelineDeco = styled.div`
     border-radius: 50%;
     background: #fff;
     border: #fff 0.1875rem solid;
-    box-shadow: var(--primary-color) 0 0 0 0.125rem;
+    box-shadow: ${props => props.theme.primaryColor} 0 0 0 0.125rem;
   }
 
   &::after {
@@ -63,7 +63,7 @@ const TimelineDeco = styled.div`
     transform: translateX(-50%);
     bottom: -4.5rem;
     width: 0.125rem;
-    background: var(--primary-color);
+    background: ${props => props.theme.primaryColor};
   }
 `
 

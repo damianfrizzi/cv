@@ -20,7 +20,7 @@ const Wrapper = styled.div`
         content: '-';
         position: absolute;
         left: 0;
-        color: var(--primary-color);
+        color: ${props => props.theme.primaryColor};
       }
     }
   }

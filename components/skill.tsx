@@ -15,11 +15,11 @@ const ExpertiseWrapper = styled.div`
 
 const Expertise = styled.div`
   height: 100%;
-  background: var(--primary-color);
+  background: ${props => props.theme.primaryColor};
 `
 
 const Small = styled.small`
-  margin-right: var(--default-padding);
+  margin-right: ${props => props.theme.defaultPadding};
   width: 30%;
 `
 

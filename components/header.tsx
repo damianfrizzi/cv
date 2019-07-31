@@ -12,10 +12,15 @@ const Intro = styled.div`
 
 const Hexagon = styled.div`
   position: relative;
-  width: var(--image-width);
-  height: var(--image-height);
-  background: var(--primary-color);
+  width: 168px;
+  height: 192px;
+  background: ${props => props.theme.primaryColor};
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+  @media print {
+    width: 148px;
+    height: 172px;
+  }
 
   &::before,
   &::after {
@@ -87,8 +92,8 @@ const Wrapper = styled.div`
   .container {
     display: grid;
     grid-template-columns: 100%;
-    grid-column-gap: 60px;
-    grid-row-gap: 24px;
+    grid-column-gap: 3.75rem;
+    grid-row-gap: ${props => props.theme.defaultPadding};
     justify-items: center;
     align-items: center;
   }
@@ -107,7 +112,7 @@ const Wrapper = styled.div`
     right: 0;
 
     .container {
-      grid-template-columns: var(--image-width) auto;
+      grid-template-columns: 168px auto;
       justify-items: initial;
     }
   }
@@ -115,7 +120,7 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
   display: inline-flex;
-  background: var(--primary-color);
+  background: ${props => props.theme.primaryColor};
   border-radius: 50%;
   padding: 6px;
   margin-right: 0.75rem;

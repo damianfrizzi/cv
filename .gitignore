@@ -1,3 +1,4 @@
-node_modules/
+node_modules
+bundles
 .next/
 pdf/dev.pdf

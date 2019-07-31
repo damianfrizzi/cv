@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 :root {
   --primary-color: #e74c3c;
-  --primary-hover-color: #862318;
+  --link-color: #d13800;
+  --link-hover-color: #862318;
   --default-padding: 24px;
   --default-negative-padding: -24px;
   --image-width: 168px;
@@ -77,7 +78,7 @@ li {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--link-color);
   text-decoration: none;
   border-bottom: transparent 2px solid;
   transition: all 0.25s ease;
@@ -88,8 +89,8 @@ a {
   vertical-align: middle;
 
   &:hover {
-    color: var(--primary-hover-color);
-    border-color: var(--primary-hover-color);
+    color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
   }
 }
 

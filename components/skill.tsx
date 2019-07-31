@@ -36,26 +36,24 @@ const Paragraph = styled.p`
 
 export const Skill: FunctionComponent<ISkillProps> = ({ skill }) => (
   <Card>
-    <>
-      <h2>{skill.category}</h2>
+    <h2>{skill.category}</h2>
 
-      <ExpertiseWrapper aria-label={`${skill.expertise}% out of 100%`}>
-        <Expertise style={{ width: `${skill.expertise}%` }} />
-      </ExpertiseWrapper>
+    <ExpertiseWrapper aria-label={`${skill.expertise}% out of 100%`}>
+      <Expertise style={{ width: `${skill.expertise}%` }} />
+    </ExpertiseWrapper>
 
-      {skill.keywordsProficient && (
-        <Paragraph>
-          <Small>Profficiency:</Small>
-          <Span>{skill.keywordsProficient.join(', ')}</Span>
-        </Paragraph>
-      )}
+    {skill.keywordsProficient && (
+      <Paragraph>
+        <Small>Profficiency:</Small>
+        <Span>{skill.keywordsProficient.join(', ')}</Span>
+      </Paragraph>
+    )}
 
-      {skill.keywordsBasic && (
-        <Paragraph>
-          <Small>Basics:</Small>
-          <Span>{skill.keywordsBasic.join(', ')}</Span>
-        </Paragraph>
-      )}
-    </>
+    {skill.keywordsBasic && (
+      <Paragraph>
+        <Small>Basics:</Small>
+        <Span>{skill.keywordsBasic.join(', ')}</Span>
+      </Paragraph>
+    )}
   </Card>
 )

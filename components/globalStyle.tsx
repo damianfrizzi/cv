@@ -28,6 +28,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 }
 
+a {
+  line-height: 100%;
+}
+
 html,
 body {
   font-size: 16px;

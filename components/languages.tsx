@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
-import styled from 'styled-components'
 import { Card } from './card'
+import { CardGrid } from './cardGrid'
 import { Anchors, Section } from './section'
 
 enum LanguageProficiencies {
@@ -33,25 +33,15 @@ const items: ILanguage[] = [
   }
 ]
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 100%;
-
-  @media (min-width: 940px), print {
-    grid-gap: var(--default-padding);
-    grid-template-columns: repeat(4, 1fr);
-  }
-`
-
 export const Languages: FunctionComponent = () => (
   <Section title={Anchors.Languages}>
-    <Wrapper>
+    <CardGrid numOfCells={4}>
       {items.map(language => (
         <Card key={language.title}>
           <h2>{language.title}</h2>
           <small>{language.proficiency}</small>
         </Card>
       ))}
-    </Wrapper>
+    </CardGrid>
   </Section>
 )

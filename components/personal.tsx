@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import styled from 'styled-components'
+import { CardGrid } from './cardGrid'
 import { PersonalItem } from './personalItem'
 import { Anchors, Section } from './section'
 
@@ -37,22 +37,12 @@ const items: IPersonalItem[] = [
   }
 ]
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 100%;
-
-  @media (min-width: 940px), print {
-    grid-gap: var(--default-padding);
-    grid-template-columns: 1fr 1fr;
-  }
-`
-
 export const Personal: FunctionComponent = () => (
   <Section title={Anchors.Personal}>
-    <Wrapper>
+    <CardGrid numOfCells={2}>
       {items.map(item => (
         <PersonalItem key={item.title} item={item} />
       ))}
-    </Wrapper>
+    </CardGrid>
   </Section>
 )

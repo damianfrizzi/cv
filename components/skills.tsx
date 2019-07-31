@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import styled from 'styled-components'
+import { CardGrid } from './cardGrid'
 import { Anchors, Section } from './section'
 import { Skill } from './skill'
 
@@ -75,22 +75,12 @@ const skills: ISkill[] = [
   }
 ]
 
-const SkillsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 100%;
-
-  @media (min-width: 940px), print {
-    grid-gap: var(--default-padding);
-    grid-template-columns: 1fr 1fr;
-  }
-`
-
 export const Skills: FunctionComponent = () => (
   <Section title={Anchors.Skills}>
-    <SkillsWrapper>
+    <CardGrid numOfCells={2}>
       {skills.map(skill => (
         <Skill key={skill.category} skill={skill} />
       ))}
-    </SkillsWrapper>
+    </CardGrid>
   </Section>
 )

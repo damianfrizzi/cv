@@ -2,8 +2,8 @@ import { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 const CardItem = styled.div`
-  padding: ${props => props.theme.defaultPadding};
-  margin: 0 ${props => props.theme.defaultNegativePadding};
+  padding: ${props => props.theme.spacing(3)};
+  margin: 0 ${props => props.theme.spacing(-3)};
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
 

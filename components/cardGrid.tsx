@@ -6,7 +6,7 @@ const CardGridComponent = styled.div`
   grid-template-columns: 100%;
 
   @media (min-width: 940px), print {
-    grid-gap: ${props => props.theme.defaultPadding};
+    grid-gap: ${props => props.theme.spacing(3)};
 
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 2 && `grid-template-columns: 1fr 1fr;`}
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 3 && `grid-template-columns: repeat(3, 1fr);`}

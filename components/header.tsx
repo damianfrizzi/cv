@@ -93,7 +93,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 100%;
     grid-column-gap: 3.75rem;
-    grid-row-gap: ${props => props.theme.defaultPadding};
+    grid-row-gap: ${props => props.theme.spacing(3)};
     justify-items: center;
     align-items: center;
   }

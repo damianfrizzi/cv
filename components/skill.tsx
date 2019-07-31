@@ -19,7 +19,7 @@ const Expertise = styled.div`
 `
 
 const Small = styled.small`
-  margin-right: ${props => props.theme.defaultPadding};
+  margin-right: ${props => props.theme.spacing(3)};
   width: 30%;
 `
 

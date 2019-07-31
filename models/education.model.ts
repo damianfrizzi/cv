@@ -10,7 +10,7 @@ export const educationModel: IEducationModel = {
       title: 'BA, Webdesign and Development',
       location: 'SAE Institute Zurich',
       dateFrom: '2013',
-      dateTo: 'Februar 2017'
+      dateTo: 'February 2017'
     },
     {
       title: 'Diploma Webdesign and Development',

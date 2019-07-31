@@ -34,7 +34,7 @@ export default class CustomDocument extends Document {
           <meta charSet="utf-8" />
           <meta content="CV of Frontend Engineer Damian Frizzi as a static website or PDF" name="description" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-          <meta name="theme-color" content="#e74c3c" />
+          <meta name="theme-color" content="#d13800" />
           <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet" />
           <link href="/static/manifest.json" rel="manifest" />
           <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />

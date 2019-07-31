@@ -67,35 +67,36 @@ p {
   margin-top: 1rem;
 }
 
-ul {
-  list-style: none;
-}
-
 li {
   padding: 3px 0;
 }
 
 a {
+  display: inline-block;
   position: relative;
+  z-index: 1;
   color: ${props => props.theme.linkColor};
   text-decoration: none;
+  transition: color 0.25s ease;
 
-  &::after {
+  &::before {
     content: "";
+    color: #fff;
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
+    z-index: -1;
+    opacity: 0;
+    right: -3px;
+    left: -3px;
+    height: 100%;
     background: ${props => props.theme.linkHoverColor};
-    transition: width 0.25s ease;
+    transition: all 0.25s ease;
   }
 
   &:hover {
-    color: ${props => props.theme.linkHoverColor};
+    color: #fff;
 
-    &::after {
-      width: 100%;
+    &::before {
+      opacity: 1;
     }
   }
 }

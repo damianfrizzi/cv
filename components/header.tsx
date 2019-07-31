@@ -155,11 +155,11 @@ export const Header: FunctionComponent = () => (
         <p>
           This CV was created using TypeScript, Next.js, and Styled Components. It can either be viewed as a static, automatically deployed site at{' '}
           <a href="https://dafri.io">dafri.io</a> or as a PDF generated using Puppeteer when accessing{' '}
-          <a target="_blank" href="https://dafri.io/pdf">
+          <a target="_blank" rel="noopener" href="https://dafri.io/pdf">
             dafri.io/pdf
           </a>
           . The source code is available on{' '}
-          <a target="_blank" href="https://github.com/damianfrizzi/cv">
+          <a target="_blank" rel="noopener" href="https://github.com/damianfrizzi/cv">
             GitHub
           </a>
           .

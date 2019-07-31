@@ -11,11 +11,12 @@ const CardGridComponent = styled.div`
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 2 && `grid-template-columns: 1fr 1fr;`}
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 3 && `grid-template-columns: repeat(3, 1fr);`}
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 4 && `grid-template-columns: repeat(4, 1fr);`}
+    ${({ numOfCells }: ICardGridsProps) => numOfCells === 'auto' && `grid-template-columns: auto auto;`}
   }
 `
 
 interface ICardGridsProps {
-  numOfCells?: number
+  numOfCells?: 1 | 2 | 3 | 4 | 'auto'
 }
 
 export const CardGrid: FunctionComponent<ICardGridsProps> = ({ children, numOfCells = 1 }) => (

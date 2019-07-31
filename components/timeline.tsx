@@ -16,8 +16,6 @@ export interface ITimeLineItem {
 }
 
 const TimelineContent = styled.div`
-  margin-bottom: 3rem;
-
   @media (min-width: 940px), print {
     margin: 0 0 3rem 4.5rem;
   }

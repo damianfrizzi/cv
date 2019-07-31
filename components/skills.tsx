@@ -78,9 +78,9 @@ const skills: ISkill[] = [
 const SkillsWrapper = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  grid-gap: var(--default-padding);
 
   @media (min-width: 940px), print {
+    grid-gap: var(--default-padding);
     grid-template-columns: 1fr 1fr;
   }
 `

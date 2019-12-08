@@ -2,8 +2,6 @@
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "css.validate": false,
-  "tslint.autoFixOnSave": true,
   "tslint.ignoreDefinitionFiles": false,
-  "tslint.configFile": "tslint.json",
-  "prettier.stylelintIntegration": true
+  "tslint.configFile": "tslint.json"
 }

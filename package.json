@@ -1,7 +1,7 @@
 {
   "name": "cv-builder",
   "version": "1.0.0",
-  "description": "A Next.js based project to generate my personal CV.",
+  "description": "Generate my personal CV from code.",
   "scripts": {
     "dev": "next",
     "dev:debug": "yarn dev --inspect=localhost:9227",

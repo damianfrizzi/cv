@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 export const Experience: FunctionComponent = () => (
   <Wrapper>
     <Section title={Anchors.Experience}>
-      <Timeline items={experienceModel.items} />
+      <Timeline items={experienceModel.items} printBreakAfter={[5]} />
     </Section>
   </Wrapper>
 )

@@ -19,7 +19,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h2`
-  padding: ${props => `${props.theme.spacing(6)} 0 ${props.theme.spacing(4)} 0`};
+  padding: ${props => `${props.theme.spacing(6)} 0 0`};
 `
 
 export const Section: FunctionComponent<ISectionProps> = ({ children, title }) => (

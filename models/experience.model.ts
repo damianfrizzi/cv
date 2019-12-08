@@ -8,9 +8,16 @@ export const experienceModel: IExperienceModel = {
   items: [
     {
       title: 'Lead Frontend Engineer',
+      location: 'Avrios International AG',
+      dateFrom: 'November 2019',
+      dateTo: 'Present',
+      paragraphs: ['Improving driver facing features of the B2B fleet management platform', 'Migrating from an AngularJS/Angular hybrid to Angular']
+    },
+    {
+      title: 'Lead Frontend Engineer',
       location: 'Digitec Galaxus AG',
       dateFrom: 'May 2018',
-      dateTo: 'Present',
+      dateTo: 'October 2019',
       paragraphs: [
         'Responsible for the conception and implementation of a modernized, universal (isomorphic) Frontend architecture using React, GraphQL, Apollo, ASP.NET Web API, Docker.',
         'Launch and continous deployment of the new Frontend application using automated build/release pipelines (VSTS) and Azure Kubernetes Services.',

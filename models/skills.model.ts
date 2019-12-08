@@ -14,12 +14,13 @@ export const skillsModel: ISkillsModel = {
     {
       category: 'JavaScript',
       expertise: 95,
-      keywordsProficient: ['ES2017', 'ES2016', 'Node.JS', 'TypeScript', 'React', 'Redux', 'Next.js', 'RequireJS'],
+      keywordsProficient: ['ES2017', 'ES2016', 'Node.JS', 'TypeScript', 'React', 'Apollo', 'Redux', 'Next.js'],
       keywordsBasic: [
+        'Angular',
+        'AngularJS',
         'React Native',
         'Vue.JS',
         'GatsbyJS',
-        'AngularJS',
         'Electron',
         'WebGL (mainly Three.js)',
         'Ionic',

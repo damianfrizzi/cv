@@ -10,50 +10,20 @@ const Intro = styled.div`
   width: 100%;
 `
 
-const Hexagon = styled.div`
-  position: relative;
-  width: 168px;
-  height: 192px;
-  background: ${props => props.theme.primaryColor};
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+const Avatar = styled.div`
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -24px;
+  background-size: 80%;
+  background-position: 50%;
+  background-color: #f6f7f8;
+  background-repeat: no-repeat;
+  background-image: url('/static/images/damian-min.jpg');
 
   @media print {
-    width: 148px;
-    height: 172px;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    clip-path: inherit;
-  }
-
-  &::before {
-    top: 6px;
-    right: 6px;
-    bottom: 6px;
-    left: 6px;
-    background: #fff;
-  }
-
-  .webp &::after {
-    background-image: url('/static/images/damian-min.webp');
-  }
-
-  .no-webp &::after {
-    background-image: url('/static/images/damian-min.jpg');
-  }
-
-  &::after {
-    top: 12px;
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    background-color: #ddd;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 10%;
+    width: 170px;
+    height: 170px;
   }
 `
 
@@ -148,7 +118,7 @@ const getIcon: FunctionComponent<IIcon> = icon => (
 export const Header: FunctionComponent = () => (
   <Wrapper>
     <div className={'container'}>
-      <Hexagon />
+      <Avatar />
       <Intro>
         <h1>Damian Frizzi</h1>
         <h3>Frontend Engineer</h3>

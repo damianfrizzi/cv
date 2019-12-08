@@ -1,9 +1,11 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { timelineItemMarginBottom } from './timeline'
 
 const CardGridComponent = styled.div`
   display: grid;
   grid-template-columns: 100%;
+  margin-top: ${timelineItemMarginBottom};
 
   @media (min-width: 940px), print {
     grid-gap: ${props => props.theme.spacing(3)};

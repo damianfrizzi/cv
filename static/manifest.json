@@ -1,8 +1,8 @@
 {
   "short_name": "CV",
   "name": "Damian's CV",
-  "theme_color": "#e74c3c",
-  "background_color": "#e74c3c",
+  "theme_color": "#487eb0",
+  "background_color": "#487eb0",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

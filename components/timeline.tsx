@@ -1,7 +1,8 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, Fragment } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Card } from './card'
+import { PrintBreakBefore } from './print'
 
 export interface ITimeLineItem {
   title: string
@@ -14,11 +15,14 @@ export interface ITimeLineItem {
 
 interface ITimelineProps {
   items: ITimeLineItem[]
+  printBreakAfter?: number[]
 }
 
-const timelineItemMarginBottom = theme.spacing(5)
+export const timelineItemMarginBottom = theme.spacing(5)
 
 const TimelineContent = styled.div`
+  margin-top: ${timelineItemMarginBottom};
+
   ul {
     margin-top: 1rem;
   }
@@ -27,6 +31,7 @@ const TimelineContent = styled.div`
 const TimelineDeco = styled.div`
   display: none;
   position: relative;
+  margin-top: ${timelineItemMarginBottom};
   padding: ${props => props.theme.spacing(3)} 0;
 
   @media (min-width: 940px), print {
@@ -61,43 +66,63 @@ const TimelineItem = styled.article`
     grid-template-columns: auto 1fr;
     grid-gap: ${props => props.theme.spacing(7)};
 
-    & + & {
-      margin-top: ${timelineItemMarginBottom};
-    }
-
     &:last-child ${TimelineDecoCircle}::after {
       content: none;
     }
   }
 `
 
-export const Timeline: FunctionComponent<ITimelineProps> = ({ items }) => (
-  <>
-    {items.map(item => (
-      <TimelineItem key={item.title}>
-        <TimelineDeco>
-          <TimelineDecoCircle />
-        </TimelineDeco>
+const PrintWrapper = styled.div`
+  @media print {
+    + ${TimelineItem} {
+      ${TimelineDeco},
+      ${TimelineContent} {
+        margin-top: ${theme.spacing(10)};
+      }
 
-        <TimelineContent>
-          <Card>
-            <h2>
-              {item.title} <small>@{item.location}</small>
-            </h2>
-            <small>
-              {item.dateFrom} - {item.dateTo}
-            </small>
-            {item.description && <p>{item.description}</p>}
-            {item.paragraphs && (
-              <ul>
-                {item.paragraphs.map((paragraph, i) => (
-                  <li key={`paragraph-${i}`}>{paragraph}</li>
-                ))}
-              </ul>
-            )}
-          </Card>
-        </TimelineContent>
-      </TimelineItem>
+      ${TimelineDecoCircle}::after {
+        content: '';
+        top: -${theme.spacing(15)};
+        height: ${theme.spacing(18)};
+      }
+    }
+  }
+`
+
+export const Timeline: FunctionComponent<ITimelineProps> = ({ items, printBreakAfter = [] }) => (
+  <>
+    {items.map((item, i) => (
+      <Fragment key={item.title + item.location}>
+        {printBreakAfter.includes(i) && (
+          <PrintWrapper>
+            <PrintBreakBefore />
+          </PrintWrapper>
+        )}
+        <TimelineItem key={item.title + item.location}>
+          <TimelineDeco>
+            <TimelineDecoCircle />
+          </TimelineDeco>
+
+          <TimelineContent>
+            <Card>
+              <h2>
+                {item.title} <small>@{item.location}</small>
+              </h2>
+              <small>
+                {item.dateFrom} - {item.dateTo}
+              </small>
+              {item.description && <p>{item.description}</p>}
+              {item.paragraphs && (
+                <ul>
+                  {item.paragraphs.map((paragraph, i) => (
+                    <li key={`paragraph-${i}`}>{paragraph}</li>
+                  ))}
+                </ul>
+              )}
+            </Card>
+          </TimelineContent>
+        </TimelineItem>
+      </Fragment>
     ))}
   </>
 )

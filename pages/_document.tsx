@@ -37,7 +37,7 @@ export default class CustomDocument extends Document {
           <meta name="theme-color" content="#487eb0" />
           <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet" />
           <link href="/static/manifest.json" rel="manifest" />
-          <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+          <link rel="shortcut icon" href="/static/images/favicon.ico?v=1" type="image/x-icon" />
           <script dangerouslySetInnerHTML={{ __html: checkForWebPSupport }} />
         </Head>
         <body>

@@ -32,7 +32,7 @@ export default class CustomDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta content="CV of Frontend Engineer Damian Frizzi as a static website or PDF" name="description" />
+          <meta content="CV of Frontend Engineer Damian Frizzi" name="description" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           <meta name="theme-color" content="#487eb0" />
           <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet" />

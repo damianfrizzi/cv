@@ -12,6 +12,7 @@
     "no-namespace": false,
     "no-implicit-dependencies": false,
     "prefer-conditional-expression": false,
+    "interface-name": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "typedef": [true, "call-signature", "parameter", "property-declaration", "member-variable-declaration"]
   },

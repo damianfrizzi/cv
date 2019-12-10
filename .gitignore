@@ -1,4 +1,5 @@
 node_modules
 bundles
 .next/
-pdf/dev.pdf
+dev.pdf
+yarn-error.log

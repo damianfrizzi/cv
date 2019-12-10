@@ -5,15 +5,8 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "builds": [{ "src": "pdf/index.js", "use": "@now/node", "config": { "maxLambdaSize": "40mb" } }, { "src": "package.json", "use": "@now/next" }],
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [
-    {
-      "src": "/pdf",
-      "dest": "/pdf/index.js",
-      "headers": {
-        "cache-control": "max-age=3600"
-      }
-    },
     {
       "src": "/_next/static/(.*)",
       "headers": { "cache-control": "max-age=31557600" },

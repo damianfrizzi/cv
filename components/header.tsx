@@ -109,7 +109,7 @@ const pinIcon: IIcon = {
   alt: 'Pin Icon'
 }
 
-const getIcon: FC<IIcon> = icon => (
+const Icon: FC<{ icon: IIcon }> = ({ icon }) => (
   <ImageWrapper>
     <img width={16} height={16} src={icon.path} alt={icon.alt} />
   </ImageWrapper>
@@ -137,26 +137,26 @@ export const Header: FC = () => (
         <SubHeader>
           <ul>
             <li>
-              {getIcon(githubIcon)}
+              <Icon icon={githubIcon} />
               <a href="https://github.com/damianfrizzi">github.com/damianfrizzi</a>
             </li>
             <li>
-              {getIcon(twitterIcon)}
+              <Icon icon={twitterIcon} />
               <a href="https://twitter.com/damianfrizzi">twitter.com/damianfrizzi</a>
             </li>
           </ul>
 
           <ul>
             <li>
-              {getIcon(emailIcon)}
+              <Icon icon={emailIcon} />
               <a href="mailto:damianfrizzi@gmail.com">damianfrizzi@gmail.com</a>
             </li>
             <li>
-              {getIcon(phoneIcon)}
+              <Icon icon={phoneIcon} />
               <a href="tel:+41 79 739§ 03 27">+41 79 739 03 27</a>
             </li>
             <li>
-              {getIcon(pinIcon)}
+              <Icon icon={pinIcon} />
               Hagenholzstrasse 84, 8050 Zürich
             </li>
           </ul>

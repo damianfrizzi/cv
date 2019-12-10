@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 export enum Anchors {
@@ -15,14 +15,14 @@ interface ISectionProps {
 
 const Container = styled.div`
   position: relative;
-  padding-bottom: ${props => props.theme.spacing(3)};
+  padding-bottom: ${({ theme }) => theme.spacing(3)};
 `
 
 const Title = styled.h2`
   padding: ${props => `${props.theme.spacing(6)} 0 0`};
 `
 
-export const Section: FunctionComponent<ISectionProps> = ({ children, title }) => (
+export const Section: FC<ISectionProps> = ({ children, title }) => (
   <Container className="container">
     <Title>{title}</Title>
     {children}

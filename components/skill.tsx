@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { ISkillItem } from '../models/skills.model'
 import { Card } from './card'
@@ -15,11 +15,11 @@ const ExpertiseWrapper = styled.div`
 
 const Expertise = styled.div`
   height: 100%;
-  background: ${props => props.theme.primaryColor};
+  background: ${({ theme }) => theme.primaryColor};
 `
 
 const Small = styled.small`
-  margin-right: ${props => props.theme.spacing(3)};
+  margin-right: ${({ theme }) => theme.spacing(3)};
   width: 30%;
 `
 
@@ -34,7 +34,7 @@ const Paragraph = styled.p`
   }
 `
 
-export const Skill: FunctionComponent<ISkillProps> = ({ skill }) => (
+export const Skill: FC<ISkillProps> = ({ skill }) => (
   <Card>
     <h2>{skill.category}</h2>
 

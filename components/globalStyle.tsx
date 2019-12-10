@@ -10,7 +10,7 @@ ${resetCss}
   margin: 0;
 
   &::selection {
-    background: ${props => props.theme.primaryColor};
+    background: ${({ theme }) => theme.primaryColor};
     color: #fff;
   }
 }
@@ -75,7 +75,7 @@ a {
   display: inline-block;
   position: relative;
   z-index: 1;
-  color: ${props => props.theme.linkColor};
+  color: ${({ theme }) => theme.linkColor};
   text-decoration: none;
   transition: color 0.25s ease;
 
@@ -88,7 +88,7 @@ a {
     right: -3px;
     left: -3px;
     height: 100%;
-    background: ${props => props.theme.linkHoverColor};
+    background: ${({ theme }) => theme.linkHoverColor};
     transition: all 0.25s ease;
   }
 

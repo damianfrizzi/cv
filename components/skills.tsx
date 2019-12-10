@@ -1,4 +1,4 @@
-import { Fragment, FunctionComponent } from 'react'
+import { Fragment, FC } from 'react'
 import styled from 'styled-components'
 import { skillsModel } from '../models/skills.model'
 import { CardGrid } from './cardGrid'
@@ -18,7 +18,7 @@ const PrintWrapper = styled.div`
   }
 `
 
-export const Skills: FunctionComponent = () => (
+export const Skills: FC = () => (
   <Section title={Anchors.Skills}>
     <CardGrid numOfCells={2}>
       {skillsModel.items.map((skill, i) => (

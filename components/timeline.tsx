@@ -1,4 +1,4 @@
-import { FunctionComponent, Fragment } from 'react'
+import { FC, Fragment } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Card } from './card'
@@ -32,7 +32,7 @@ const TimelineDeco = styled.div`
   display: none;
   position: relative;
   margin-top: ${timelineItemMarginBottom};
-  padding: ${props => props.theme.spacing(3)} 0;
+  padding: ${({ theme }) => theme.spacing(3)} 0;
 
   @media (min-width: 940px), print {
     display: block;
@@ -40,21 +40,21 @@ const TimelineDeco = styled.div`
 `
 
 const TimelineDecoCircle = styled.div`
-  width: ${props => props.theme.spacing(3)};
-  height: ${props => props.theme.spacing(3)};
+  width: ${({ theme }) => theme.spacing(3)};
+  height: ${({ theme }) => theme.spacing(3)};
   border-radius: 50%;
-  box-shadow: inset ${props => props.theme.primaryColor} 0 0 0 0.125rem;
+  box-shadow: inset ${({ theme }) => theme.primaryColor} 0 0 0 0.125rem;
   background: #fff;
 
   &::after {
     content: '';
     position: absolute;
-    top: ${props => props.theme.spacing(6)};
+    top: ${({ theme }) => theme.spacing(6)};
     height: ${`calc(100% + ${timelineItemMarginBottom})`};
     width: 0.125rem;
     left: 50%;
     transform: translateX(-50%);
-    background: ${props => props.theme.primaryColor};
+    background: ${({ theme }) => theme.primaryColor};
   }
 `
 
@@ -64,7 +64,7 @@ const TimelineItem = styled.article`
     break-inside: avoid;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: ${props => props.theme.spacing(7)};
+    grid-gap: ${({ theme }) => theme.spacing(7)};
 
     &:last-child ${TimelineDecoCircle}::after {
       content: none;
@@ -89,7 +89,7 @@ const PrintWrapper = styled.div`
   }
 `
 
-export const Timeline: FunctionComponent<ITimelineProps> = ({ items, printBreakAfter = [] }) => (
+export const Timeline: FC<ITimelineProps> = ({ items, printBreakAfter = [] }) => (
   <>
     {items.map((item, i) => (
       <Fragment key={item.title + item.location}>

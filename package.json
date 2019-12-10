@@ -16,15 +16,15 @@
   "license": "ISC",
   "dependencies": {
     "chrome-aws-lambda": "2.0.1",
-    "next": "9.1.4",
+    "next": "9.1.5",
     "puppeteer-core": "2.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0"
   },
   "devDependencies": {
     "@types/puppeteer-core": "2.0.0",
-    "@types/react": "16.9.15",
-    "@types/styled-components": "4.4.0",
+    "@types/react": "16.9.16",
+    "@types/styled-components": "4.4.1",
     "@zeit/next-bundle-analyzer": "0.1.2",
     "babel-plugin-styled-components": "1.10.6",
     "cross-env": "6.0.3",

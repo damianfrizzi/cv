@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { timelineItemMarginBottom } from './timeline'
 
@@ -8,7 +8,7 @@ const CardGridComponent = styled.div`
   margin-top: ${timelineItemMarginBottom};
 
   @media (min-width: 940px), print {
-    grid-gap: ${props => props.theme.spacing(3)};
+    grid-gap: ${({ theme }) => theme.spacing(3)};
 
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 2 && `grid-template-columns: 1fr 1fr;`}
     ${({ numOfCells }: ICardGridsProps) => numOfCells === 3 && `grid-template-columns: repeat(3, 1fr);`}
@@ -21,6 +21,4 @@ interface ICardGridsProps {
   numOfCells?: 1 | 2 | 3 | 4 | 'auto'
 }
 
-export const CardGrid: FunctionComponent<ICardGridsProps> = ({ children, numOfCells = 1 }) => (
-  <CardGridComponent numOfCells={numOfCells}>{children}</CardGridComponent>
-)
+export const CardGrid: FC<ICardGridsProps> = ({ children, numOfCells = 1 }) => <CardGridComponent numOfCells={numOfCells}>{children}</CardGridComponent>

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 interface IIcon {
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   padding: 24px 0;
 
   p {
-    margin-bottom: ${props => props.theme.spacing(2)};
+    margin-bottom: ${({ theme }) => theme.spacing(2)};
   }
 
   li {
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 100%;
     grid-column-gap: 3.75rem;
-    grid-row-gap: ${props => props.theme.spacing(3)};
+    grid-row-gap: ${({ theme }) => theme.spacing(3)};
     justify-items: center;
     align-items: center;
   }
@@ -81,7 +81,7 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
   display: inline-flex;
-  background: ${props => props.theme.primaryColor};
+  background: ${({ theme }) => theme.primaryColor};
   border-radius: 50%;
   padding: 6px;
   margin-right: 0.75rem;
@@ -109,13 +109,13 @@ const pinIcon: IIcon = {
   alt: 'Pin Icon'
 }
 
-const getIcon: FunctionComponent<IIcon> = icon => (
+const getIcon: FC<IIcon> = icon => (
   <ImageWrapper>
     <img width={16} height={16} src={icon.path} alt={icon.alt} />
   </ImageWrapper>
 )
 
-export const Header: FunctionComponent = () => (
+export const Header: FC = () => (
   <Wrapper>
     <div className={'container'}>
       <Avatar />

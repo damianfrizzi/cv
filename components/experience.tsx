@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { experienceModel } from '../models/experience.model'
 import { Anchors, Section } from './section'
@@ -20,13 +20,13 @@ const Wrapper = styled.div`
         content: '-';
         position: absolute;
         left: 0;
-        color: ${props => props.theme.primaryColor};
+        color: ${({ theme }) => theme.primaryColor};
       }
     }
   }
 `
 
-export const Experience: FunctionComponent = () => (
+export const Experience: FC = () => (
   <Wrapper>
     <Section title={Anchors.Experience}>
       <Timeline items={experienceModel.items} printBreakAfter={[5]} />

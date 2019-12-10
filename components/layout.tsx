@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { theme } from '../theme'
 import { Content } from './content'
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   background: #f6f7f8;
 `
 
-export const Layout: FunctionComponent = () => (
+export const Layout: FC = () => (
   <ThemeProvider theme={theme}>
     <Wrapper>
       <Head>

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 export enum Stripes {
@@ -10,7 +10,7 @@ interface IStripeProps {
   position: Stripes
 }
 
-const StripeItem: FunctionComponent<IStripeProps> = styled.div`
+const StripeItem: FC<IStripeProps> = styled.div`
   display: none;
 
   @media (min-width: 940px), print {
@@ -19,8 +19,8 @@ const StripeItem: FunctionComponent<IStripeProps> = styled.div`
     overflow: hidden;
     transform: skewY(2deg);
     background: #fff;
-    margin-top: ${props => props.theme.spacing(-4)};
-    margin-bottom: ${props => props.theme.spacing(-3)};
+    margin-top: ${({ theme }) => theme.spacing(-4)};
+    margin-bottom: ${({ theme }) => theme.spacing(-3)};
   }
 
   @media print {
@@ -41,4 +41,4 @@ const StripeItem: FunctionComponent<IStripeProps> = styled.div`
     }`}
 `
 
-export const Stripe: FunctionComponent<IStripeProps> = ({ position }) => <StripeItem position={position} />
+export const Stripe: FC<IStripeProps> = ({ position }) => <StripeItem position={position} />

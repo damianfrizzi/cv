@@ -32,7 +32,7 @@ const TimelineDeco = styled.div`
   display: none;
   position: relative;
   margin-top: ${timelineItemMarginBottom};
-  padding: ${({ theme }) => theme.spacing(3)} 0;
+  padding: ${theme.spacing(3)} 0;
 
   @media (min-width: 940px), print {
     display: block;
@@ -40,21 +40,21 @@ const TimelineDeco = styled.div`
 `
 
 const TimelineDecoCircle = styled.div`
-  width: ${({ theme }) => theme.spacing(3)};
-  height: ${({ theme }) => theme.spacing(3)};
+  width: ${theme.spacing(3)};
+  height: ${theme.spacing(3)};
   border-radius: 50%;
-  box-shadow: inset ${({ theme }) => theme.primaryColor} 0 0 0 0.125rem;
+  box-shadow: inset ${theme.primaryColor} 0 0 0 0.125rem;
   background: #fff;
 
   &::after {
     content: '';
     position: absolute;
-    top: ${({ theme }) => theme.spacing(6)};
+    top: ${theme.spacing(6)};
     height: ${`calc(100% + ${timelineItemMarginBottom})`};
     width: 0.125rem;
     left: 50%;
     transform: translateX(-50%);
-    background: ${({ theme }) => theme.primaryColor};
+    background: ${theme.primaryColor};
   }
 `
 
@@ -64,7 +64,7 @@ const TimelineItem = styled.article`
     break-inside: avoid;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: ${({ theme }) => theme.spacing(7)};
+    grid-gap: ${theme.spacing(7)};
 
     &:last-child ${TimelineDecoCircle}::after {
       content: none;
@@ -114,8 +114,8 @@ export const Timeline: FC<ITimelineProps> = ({ items, printBreakAfter = [] }) =>
               {item.description && <p>{item.description}</p>}
               {item.paragraphs && (
                 <ul>
-                  {item.paragraphs.map((paragraph, i) => (
-                    <li key={`paragraph-${i}`}>{paragraph}</li>
+                  {item.paragraphs.map((paragraph, j) => (
+                    <li key={`paragraph-${j}`}>{paragraph}</li>
                   ))}
                 </ul>
               )}

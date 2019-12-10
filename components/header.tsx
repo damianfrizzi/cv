@@ -92,18 +92,22 @@ const githubIcon: IIcon = {
   path: '/static/images/github.svg',
   alt: 'Github Icon'
 }
+
 const twitterIcon: IIcon = {
   path: '/static/images/twitter.svg',
   alt: 'Twitter Icon'
 }
+
 const emailIcon: IIcon = {
   path: '/static/images/email.svg',
   alt: 'Email Icon'
 }
+
 const phoneIcon: IIcon = {
   path: '/static/images/phone.svg',
   alt: 'Phone Icon'
 }
+
 const pinIcon: IIcon = {
   path: '/static/images/pin.svg',
   alt: 'Pin Icon'

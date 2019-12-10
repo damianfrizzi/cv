@@ -1,4 +1,4 @@
-import { Fragment, FC } from 'react'
+import { FC, Fragment } from 'react'
 import styled from 'styled-components'
 import { skillsModel } from '../models/skills.model'
 import { CardGrid } from './cardGrid'

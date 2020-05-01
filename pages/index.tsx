@@ -4,7 +4,7 @@ import { Header } from 'components/header'
 import { Languages } from 'components/languages'
 import { Skills } from 'components/skills'
 import { Stripe, Stripes } from 'components/stripe'
-import { PrismicDocument, PrismicEducation, PrismicLanguage, PrismicPosition } from 'lib/prismic/types'
+import { PrismicDocument, PrismicEducation, PrismicLanguage, PrismicPosition, PrismicSkill } from 'lib/prismic/types'
 import { GetStaticProps, NextPage } from 'next'
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../lib/prismic/config'
@@ -13,16 +13,17 @@ interface HomePageProps {
   positions: Array<PrismicDocument<PrismicPosition>>
   educations: Array<PrismicDocument<PrismicEducation>>
   languages: Array<PrismicDocument<PrismicLanguage>>
+  skills: Array<PrismicDocument<PrismicSkill>>
 }
 
-const HomePage: NextPage<HomePageProps> = ({ positions, educations, languages }) => (
+const HomePage: NextPage<HomePageProps> = ({ positions, educations, languages, skills }) => (
   <>
     <Stripe position={Stripes.Top} />
     <Header />
     <main>
       <Experience positions={positions} />
       <Education educations={educations} />
-      <Skills />
+      <Skills skills={skills} />
       <Languages languages={languages} />
     </main>
     <Stripe position={Stripes.Bottom} />
@@ -40,11 +41,16 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
 
   const resEducations = await PrismicClient.query(Prismic.Predicates.at('document.type', 'education'), {
     ref,
-    orderings: '[my.position.start_date desc]'
+    orderings: '[my.education.start_date desc]'
   })
 
   const resLanguages = await PrismicClient.query(Prismic.Predicates.at('document.type', 'language'), {
     ref
+  })
+
+  const resSkills = await PrismicClient.query(Prismic.Predicates.at('document.type', 'skill'), {
+    ref,
+    orderings: '[my.skill.progress desc]'
   })
 
   return {
@@ -52,7 +58,8 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
       preview,
       positions: resPositions.results ?? null,
       educations: resEducations.results ?? null,
-      languages: resLanguages.results ?? null
+      languages: resLanguages.results ?? null,
+      skills: resSkills.results ?? null
     }
   }
 }

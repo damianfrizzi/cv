@@ -1,10 +1,10 @@
+import { PrismicDocument, PrismicSkill } from 'lib/prismic/types'
 import { FC } from 'react'
 import styled from 'styled-components'
-import { ISkillItem } from '../models/skills.model'
 import { Card } from './card'
 
-interface ISkillProps {
-  skill: ISkillItem
+interface SkillProps {
+  skill: PrismicDocument<PrismicSkill>
 }
 
 const ExpertiseWrapper = styled.div`
@@ -34,25 +34,25 @@ const Paragraph = styled.p`
   }
 `
 
-export const Skill: FC<ISkillProps> = ({ skill }) => (
+export const Skill: FC<SkillProps> = ({ skill: { data } }) => (
   <Card>
-    <h2>{skill.category}</h2>
+    <h2>{data.title}</h2>
 
-    <ExpertiseWrapper aria-label={`${skill.expertise}% out of 100%`}>
-      <Expertise style={{ width: `${skill.expertise}%` }} />
+    <ExpertiseWrapper aria-label={`${data.progress}% out of 100%`}>
+      <Expertise style={{ width: `${data.progress}%` }} />
     </ExpertiseWrapper>
 
-    {skill.keywordsProficient && (
+    {data.profficiency && data.profficiency.length > 0 && (
       <Paragraph>
         <Small>Profficiency:</Small>
-        <Span>{skill.keywordsProficient.join(', ')}</Span>
+        <Span>{data.profficiency.map(p => p.skill).join(', ')}</Span>
       </Paragraph>
     )}
 
-    {skill.keywordsBasic && (
+    {data.basics && data.basics?.length > 0 && (
       <Paragraph>
         <Small>Basics:</Small>
-        <Span>{skill.keywordsBasic.join(', ')}</Span>
+        <Span>{data.basics.map(b => b.skill).join(', ')}</Span>
       </Paragraph>
     )}
   </Card>

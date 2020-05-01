@@ -26,6 +26,13 @@ export interface PrismicEducation {
   duties?: PrismicData[]
 }
 
+export interface PrismicSkill {
+  title?: string
+  progress?: number
+  profficiency?: Array<{ skill: string }>
+  basics?: Array<{ skill: string }>
+}
+
 export interface PrismicLanguage {
   title?: string
   skill_level?: 'Native' | 'Fluent' | 'Intermediate'

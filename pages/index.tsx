@@ -1,14 +1,23 @@
+import { Content } from 'components/content'
+import { Header } from 'components/header'
+import { Stripe, Stripes } from 'components/stripe'
 import { PrismicDocument, PrismicPosition } from 'lib/prismic/types'
 import { GetStaticProps, NextPage } from 'next'
 import Prismic from 'prismic-javascript'
-import { Layout } from '../components/layout'
 import { PrismicClient } from '../lib/prismic/config'
 
 interface HomePageProps {
   positions: Array<PrismicDocument<PrismicPosition>>
 }
 
-const HomePage: NextPage<HomePageProps> = ({ positions }) => <Layout positions={positions} />
+const HomePage: NextPage<HomePageProps> = ({ positions }) => (
+  <>
+    <Stripe position={Stripes.Top} />
+    <Header />
+    <Content positions={positions} />
+    <Stripe position={Stripes.Bottom} />
+  </>
+)
 
 export const getStaticProps: GetStaticProps = async ({ preview = false, previewData }) => {
   const prismicAPI = await PrismicClient.getApi()

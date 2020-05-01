@@ -1,20 +1,29 @@
-import { Content } from 'components/content'
+import { Education } from 'components/education'
+import { Experience } from 'components/experience'
 import { Header } from 'components/header'
+import { Languages } from 'components/languages'
+import { Skills } from 'components/skills'
 import { Stripe, Stripes } from 'components/stripe'
-import { PrismicDocument, PrismicPosition } from 'lib/prismic/types'
+import { PrismicDocument, PrismicEducation, PrismicPosition } from 'lib/prismic/types'
 import { GetStaticProps, NextPage } from 'next'
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../lib/prismic/config'
 
 interface HomePageProps {
   positions: Array<PrismicDocument<PrismicPosition>>
+  educations: Array<PrismicDocument<PrismicEducation>>
 }
 
-const HomePage: NextPage<HomePageProps> = ({ positions }) => (
+const HomePage: NextPage<HomePageProps> = ({ positions, educations }) => (
   <>
     <Stripe position={Stripes.Top} />
     <Header />
-    <Content positions={positions} />
+    <main>
+      <Experience positions={positions} />
+      <Education educations={educations} />
+      <Skills />
+      <Languages />
+    </main>
     <Stripe position={Stripes.Bottom} />
   </>
 )
@@ -23,7 +32,12 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
   const prismicAPI = await PrismicClient.getApi()
   const ref = previewData?.ref || prismicAPI.masterRef.ref
 
-  const res = await PrismicClient.query(Prismic.Predicates.at('document.type', 'position'), {
+  const resPositions = await PrismicClient.query(Prismic.Predicates.at('document.type', 'position'), {
+    ref,
+    orderings: '[my.position.start_date desc]'
+  })
+
+  const resEducations = await PrismicClient.query(Prismic.Predicates.at('document.type', 'education'), {
     ref,
     orderings: '[my.position.start_date desc]'
   })
@@ -31,7 +45,8 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
   return {
     props: {
       preview,
-      positions: res.results ?? null
+      positions: resPositions.results ?? null,
+      educations: resEducations.results ?? null
     }
   }
 }

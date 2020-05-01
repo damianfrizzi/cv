@@ -1,10 +1,13 @@
+import { PrismicDocument, PrismicEducation } from 'lib/prismic/types'
 import { FC } from 'react'
-import { educationModel } from '../models/education.model'
 import { Anchors, Section } from './section'
-import { Timeline } from './timeline'
+import { Timeline } from './timelineNew'
+interface EducationProps {
+  educations: Array<PrismicDocument<PrismicEducation>>
+}
 
-export const Education: FC = () => (
+export const Education: FC<EducationProps> = ({ educations }) => (
   <Section title={Anchors.Education}>
-    <Timeline items={educationModel.items} />
+    <Timeline items={educations} />
   </Section>
 )

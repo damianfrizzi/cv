@@ -17,3 +17,11 @@ export interface PrismicPosition {
   end_date?: string
   duties?: PrismicData[]
 }
+
+export interface PrismicEducation {
+  title?: string
+  school?: string
+  start_date?: string
+  end_date?: string
+  duties?: PrismicData[]
+}

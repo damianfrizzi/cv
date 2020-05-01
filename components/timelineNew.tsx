@@ -1,13 +1,15 @@
 import { format } from 'date-fns'
-import { PrismicDocument, PrismicPosition } from 'lib/prismic/types'
+import { PrismicDocument, PrismicEducation, PrismicPosition } from 'lib/prismic/types'
 import { Date, RichText } from 'prismic-reactjs'
 import { FC, Fragment } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Card } from './card'
 
+type PossibleDocuments = PrismicPosition | PrismicEducation
+
 interface TimelineProps {
-  items: Array<PrismicDocument<PrismicPosition>>
+  items: Array<PrismicDocument<PossibleDocuments>>
 }
 
 export const timelineItemMarginBottom = theme.spacing(5)
@@ -76,12 +78,21 @@ export const Timeline: FC<TimelineProps> = ({ items }) => (
           <TimelineContent>
             <Card>
               <h2>
-                {data.position} <small>@{data.company}</small>
+                {isPosition(data) && (
+                  <>
+                    {data.position} <small>@{data.company}</small>
+                  </>
+                )}
+                {isEducation(data) && (
+                  <>
+                    {data.title} <small>@{data.school}</small>
+                  </>
+                )}
               </h2>
               <small>
                 {format(Date(data.start_date), 'LLLL yyyy')} - {data.end_date ? format(Date(data.end_date), 'LLLL yyyy') : 'Present'}
               </small>
-              {data.duties && (
+              {isPosition(data) && data.duties && (
                 <ul>
                   {data.duties.map((duty, i) => (
                     <li key={i}>{RichText.asText([duty])}</li>
@@ -95,3 +106,6 @@ export const Timeline: FC<TimelineProps> = ({ items }) => (
     ))}
   </>
 )
+
+const isPosition = (data: PossibleDocuments): data is PrismicPosition => data.hasOwnProperty('position')
+const isEducation = (data: PossibleDocuments): data is PrismicEducation => data.hasOwnProperty('school')

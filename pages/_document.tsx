@@ -14,7 +14,6 @@ export default class CustomDocument extends Document {
           <meta content="CV of Frontend Engineer Damian Frizzi" name="description" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           <meta name="theme-color" content="#487eb0" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet" />
           <link href="/static/manifest.json" rel="manifest" />
           <link rel="shortcut icon" href="/static/images/favicon.ico?v=1" type="image/x-icon" />
           <script dangerouslySetInnerHTML={{ __html: checkForWebPSupport }} />

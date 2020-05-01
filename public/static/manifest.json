@@ -5,7 +5,7 @@
   "background_color": "#487eb0",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://dafri.io",
   "splash_pages": null,
   "icons": [
     {

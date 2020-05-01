@@ -16,6 +16,7 @@ export default class CustomDocument extends Document {
           <meta name="theme-color" content="#487eb0" />
           <link href="/static/manifest.json" rel="manifest" />
           <link rel="shortcut icon" href="/static/images/favicon.ico?v=1" type="image/x-icon" />
+          <link rel="apple-touch-icon" href="/static/images/pwa-192.png" />
           <script dangerouslySetInnerHTML={{ __html: checkForWebPSupport }} />
         </Head>
         <body>

@@ -1,9 +1,9 @@
 import { GlobalStyle } from 'components/globalStyle'
+import { theme } from 'lib/theme'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { FC } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { theme } from '../theme'
 
 const Wrapper = styled.div`
   background: #f6f7f8;

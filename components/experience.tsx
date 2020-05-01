@@ -2,7 +2,7 @@ import { PrismicDocument, PrismicPosition } from 'lib/prismic/types'
 import { FC } from 'react'
 import styled from 'styled-components'
 import { Anchors, Section } from './section'
-import { Timeline } from './timelineNew'
+import { Timeline } from './timeline'
 
 const Wrapper = styled.div`
   ul {

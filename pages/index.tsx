@@ -4,10 +4,10 @@ import { Header } from 'components/header'
 import { Languages } from 'components/languages'
 import { Skills } from 'components/skills'
 import { Stripe, Stripes } from 'components/stripe'
+import { PrismicClient } from 'lib/prismic/config'
 import { PrismicDocument, PrismicEducation, PrismicLanguage, PrismicPosition, PrismicSkill } from 'lib/prismic/types'
 import { GetStaticProps, NextPage } from 'next'
 import Prismic from 'prismic-javascript'
-import { PrismicClient } from '../lib/prismic/config'
 
 interface HomePageProps {
   positions: Array<PrismicDocument<PrismicPosition>>

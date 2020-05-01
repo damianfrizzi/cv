@@ -1,21 +1,15 @@
+import { format } from 'date-fns'
+import { PrismicDocument, PrismicEducation, PrismicPosition } from 'lib/prismic/types'
+import { theme } from 'lib/theme'
+import { Date, RichText } from 'prismic-reactjs'
 import { FC, Fragment } from 'react'
 import styled from 'styled-components'
-import { theme } from '../theme'
 import { Card } from './card'
-import { PrintBreakBefore } from './print'
 
-export interface ITimeLineItem {
-  title: string
-  location: string
-  description?: string | []
-  paragraphs?: string[]
-  dateFrom: string
-  dateTo: string
-}
+type PossibleDocuments = PrismicPosition | PrismicEducation
 
-interface ITimelineProps {
-  items: ITimeLineItem[]
-  printBreakAfter?: number[]
+interface TimelineProps {
+  items: Array<PrismicDocument<PossibleDocuments>>
 }
 
 export const timelineItemMarginBottom = theme.spacing(5)
@@ -72,33 +66,11 @@ const TimelineItem = styled.article`
   }
 `
 
-const PrintWrapper = styled.div`
-  @media print {
-    + ${TimelineItem} {
-      ${TimelineDeco},
-      ${TimelineContent} {
-        margin-top: ${theme.spacing(10)};
-      }
-
-      ${TimelineDecoCircle}::after {
-        content: '';
-        top: -${theme.spacing(15)};
-        height: ${theme.spacing(18)};
-      }
-    }
-  }
-`
-
-export const Timeline: FC<ITimelineProps> = ({ items, printBreakAfter = [] }) => (
+export const Timeline: FC<TimelineProps> = ({ items }) => (
   <>
-    {items.map((item, i) => (
-      <Fragment key={item.title + item.location}>
-        {printBreakAfter.includes(i) && (
-          <PrintWrapper>
-            <PrintBreakBefore />
-          </PrintWrapper>
-        )}
-        <TimelineItem key={item.title + item.location}>
+    {items.map(({ id, data }) => (
+      <Fragment key={id}>
+        <TimelineItem>
           <TimelineDeco>
             <TimelineDecoCircle />
           </TimelineDeco>
@@ -106,16 +78,24 @@ export const Timeline: FC<ITimelineProps> = ({ items, printBreakAfter = [] }) =>
           <TimelineContent>
             <Card>
               <h2>
-                {item.title} <small>@{item.location}</small>
+                {isPosition(data) && (
+                  <>
+                    {data.position} <small>@{data.company}</small>
+                  </>
+                )}
+                {isEducation(data) && (
+                  <>
+                    {data.title} <small>@{data.school}</small>
+                  </>
+                )}
               </h2>
               <small>
-                {item.dateFrom} - {item.dateTo}
+                {format(Date(data.start_date), 'LLLL yyyy')} - {data.end_date ? format(Date(data.end_date), 'LLLL yyyy') : 'Present'}
               </small>
-              {item.description && <p>{item.description}</p>}
-              {item.paragraphs && (
+              {isPosition(data) && data.duties && (
                 <ul>
-                  {item.paragraphs.map((paragraph, j) => (
-                    <li key={`paragraph-${j}`}>{paragraph}</li>
+                  {data.duties.map((duty, i) => (
+                    <li key={i}>{RichText.asText([duty])}</li>
                   ))}
                 </ul>
               )}
@@ -126,3 +106,6 @@ export const Timeline: FC<ITimelineProps> = ({ items, printBreakAfter = [] }) =>
     ))}
   </>
 )
+
+const isPosition = (data: PossibleDocuments): data is PrismicPosition => data.hasOwnProperty('position')
+const isEducation = (data: PossibleDocuments): data is PrismicEducation => data.hasOwnProperty('school')

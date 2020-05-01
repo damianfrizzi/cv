@@ -1,5 +1,5 @@
+import { theme } from 'lib/theme'
 import 'styled-components'
-import { theme } from '../theme'
 
 type ThemeInterface = typeof theme
 

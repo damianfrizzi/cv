@@ -8,7 +8,7 @@ import styles from './timeline.module.scss'
 type PossibleDocuments = PrismicPosition | PrismicEducation
 
 interface TimelineProps {
-  items: Array<PrismicDocument<PossibleDocuments>>
+  items: PrismicDocument<PossibleDocuments>[]
 }
 
 export const Timeline: FC<TimelineProps> = ({ items }) => (

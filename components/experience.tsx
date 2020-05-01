@@ -5,7 +5,7 @@ import { Anchors, Section } from './section'
 import { Timeline } from './timeline'
 
 interface ExperienceProps {
-  positions: Array<PrismicDocument<PrismicPosition>>
+  positions: PrismicDocument<PrismicPosition>[]
 }
 
 export const Experience: FC<ExperienceProps> = ({ positions }) => (

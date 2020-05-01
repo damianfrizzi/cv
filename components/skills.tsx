@@ -9,7 +9,7 @@ import styles from './skills.module.scss'
 const printBreakAfter = [3]
 
 interface SkillsProps {
-  skills: Array<PrismicDocument<PrismicSkill>>
+  skills: PrismicDocument<PrismicSkill>[]
 }
 
 export const Skills: FC<SkillsProps> = ({ skills }) => (

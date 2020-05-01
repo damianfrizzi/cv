@@ -5,7 +5,7 @@ import { CardGrid } from './cardGrid'
 import { Anchors, Section } from './section'
 
 interface LanguagesProps {
-  languages: Array<PrismicDocument<PrismicLanguage>>
+  languages: PrismicDocument<PrismicLanguage>[]
 }
 
 export const Languages: FC<LanguagesProps> = ({ languages }) => (

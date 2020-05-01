@@ -4,7 +4,7 @@ import { Anchors, Section } from './section'
 import { Timeline } from './timeline'
 
 interface EducationProps {
-  educations: Array<PrismicDocument<PrismicEducation>>
+  educations: PrismicDocument<PrismicEducation>[]
 }
 
 export const Education: FC<EducationProps> = ({ educations }) => (

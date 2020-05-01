@@ -12,10 +12,10 @@ import Head from 'next/head'
 import Prismic from 'prismic-javascript'
 
 interface HomePageProps {
-  positions: Array<PrismicDocument<PrismicPosition>>
-  educations: Array<PrismicDocument<PrismicEducation>>
-  languages: Array<PrismicDocument<PrismicLanguage>>
-  skills: Array<PrismicDocument<PrismicSkill>>
+  positions: PrismicDocument<PrismicPosition>[]
+  educations: PrismicDocument<PrismicEducation>[]
+  languages: PrismicDocument<PrismicLanguage>[]
+  skills: PrismicDocument<PrismicSkill>[]
 }
 
 const HomePage: NextPage<HomePageProps> = ({ positions, educations, languages, skills }) => (

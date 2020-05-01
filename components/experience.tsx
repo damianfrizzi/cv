@@ -1,8 +1,8 @@
+import { PrismicDocument, PrismicPosition } from 'lib/prismic/types'
 import { FC } from 'react'
 import styled from 'styled-components'
-import { experienceModel } from '../models/experience.model'
 import { Anchors, Section } from './section'
-import { Timeline } from './timeline'
+import { Timeline } from './timelineNew'
 
 const Wrapper = styled.div`
   ul {
@@ -26,10 +26,14 @@ const Wrapper = styled.div`
   }
 `
 
-export const Experience: FC = () => (
+interface ExperienceProps {
+  positions: Array<PrismicDocument<PrismicPosition>>
+}
+
+export const Experience: FC<ExperienceProps> = ({ positions }) => (
   <Wrapper>
     <Section title={Anchors.Experience}>
-      <Timeline items={experienceModel.items} printBreakAfter={[5]} />
+      <Timeline items={positions} />
     </Section>
   </Wrapper>
 )

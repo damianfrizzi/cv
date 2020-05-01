@@ -1,3 +1,4 @@
+import { PrismicDocument, PrismicPosition } from 'lib/prismic/types'
 import Head from 'next/head'
 import { FC } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
@@ -11,7 +12,11 @@ const Wrapper = styled.div`
   background: #f6f7f8;
 `
 
-export const Layout: FC = () => (
+interface LayoutProps {
+  positions: Array<PrismicDocument<PrismicPosition>>
+}
+
+export const Layout: FC<LayoutProps> = ({ positions }) => (
   <ThemeProvider theme={theme}>
     <Wrapper>
       <Head>
@@ -20,7 +25,7 @@ export const Layout: FC = () => (
       <GlobalStyle />
       <Stripe position={Stripes.Top} />
       <Header />
-      <Content />
+      <Content positions={positions} />
       <Stripe position={Stripes.Bottom} />
     </Wrapper>
   </ThemeProvider>

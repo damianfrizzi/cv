@@ -16,12 +16,17 @@
   "license": "ISC",
   "dependencies": {
     "chrome-aws-lambda": "2.0.1",
-    "next": "9.1.5",
+    "date-fns": "^2.12.0",
+    "next": "9.3.4",
+    "prismic-dom": "^2.2.3",
+    "prismic-javascript": "^2.7.1",
+    "prismic-reactjs": "^1.3.1",
     "puppeteer-core": "2.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0"
   },
   "devDependencies": {
+    "@types/prismic-dom": "^2.1.1",
     "@types/puppeteer-core": "2.0.0",
     "@types/react": "16.9.16",
     "@types/styled-components": "4.4.1",

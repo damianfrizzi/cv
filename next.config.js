@@ -22,14 +22,9 @@ module.exports = withBundleAnalyzer({
           urlPattern: /^https?.*/,
           handler: 'NetworkFirst',
           options: {
-            cacheName: 'https-calls',
-            networkTimeoutSeconds: 15,
+            cacheName: 'offlineCache',
             expiration: {
-              maxEntries: 150,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
+              maxEntries: 200,
             },
           },
         },

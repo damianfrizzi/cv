@@ -1,0 +1,11 @@
+@import 'lib/scss/variables';
+
+.printWrapper {
+  display: none;
+
+  @media print {
+    display: block;
+    height: 150px;
+    grid-column: 2;
+  }
+}

@@ -1,5 +1,6 @@
+import classNames from 'classnames'
 import { FC } from 'react'
-import styled from 'styled-components'
+import styles from './section.module.scss'
 
 export enum Anchors {
   Experience = 'Experience',
@@ -9,22 +10,13 @@ export enum Anchors {
   Personal = 'Personal'
 }
 
-interface ISectionProps {
+interface SectionProps {
   title: Anchors
 }
 
-const Container = styled.div`
-  position: relative;
-  padding-bottom: ${({ theme }) => theme.spacing(3)};
-`
-
-const Title = styled.h2`
-  padding: ${props => `${props.theme.spacing(6)} 0 0`};
-`
-
-export const Section: FC<ISectionProps> = ({ children, title }) => (
-  <Container className="container">
-    <Title>{title}</Title>
+export const Section: FC<SectionProps> = ({ children, title }) => (
+  <div className={classNames('container', styles.section)}>
+    <h2 className={styles.title}>{title}</h2>
     {children}
-  </Container>
+  </div>
 )

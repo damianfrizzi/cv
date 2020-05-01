@@ -1,0 +1,32 @@
+@import 'lib/scss/variables';
+
+.stripe {
+  display: none;
+
+  @media (min-width: 940px), print {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    transform: skewY(2deg);
+    background: #fff;
+    margin-top: $spacing * -4;
+    margin-bottom: $spacing * -3;
+  }
+
+  @media print {
+    height: 260px;
+  }
+}
+
+.stripeTop {
+  @media (min-width: 940px), screen {
+    height: 342px;
+  }
+}
+
+.stripeBottom {
+  @media (min-width: 940px), print {
+    transform-origin: -100%;
+    height: 150px;
+  }
+}

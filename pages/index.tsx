@@ -2,11 +2,13 @@ import { Education } from 'components/education'
 import { Experience } from 'components/experience'
 import { Header } from 'components/header'
 import { Languages } from 'components/languages'
+import { Main } from 'components/main'
 import { Skills } from 'components/skills'
 import { Stripe, Stripes } from 'components/stripe'
 import { PrismicClient } from 'lib/prismic/config'
 import { PrismicDocument, PrismicEducation, PrismicLanguage, PrismicPosition, PrismicSkill } from 'lib/prismic/types'
 import { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 import Prismic from 'prismic-javascript'
 
 interface HomePageProps {
@@ -17,7 +19,10 @@ interface HomePageProps {
 }
 
 const HomePage: NextPage<HomePageProps> = ({ positions, educations, languages, skills }) => (
-  <>
+  <Main>
+    <Head>
+      <title>Damian Frizzi - Frontend Engineer</title>
+    </Head>
     <Stripe position={Stripes.Top} />
     <Header />
     <main>
@@ -27,7 +32,7 @@ const HomePage: NextPage<HomePageProps> = ({ positions, educations, languages, s
       <Languages languages={languages} />
     </main>
     <Stripe position={Stripes.Bottom} />
-  </>
+  </Main>
 )
 
 export const getStaticProps: GetStaticProps = async ({ preview = false, previewData }) => {

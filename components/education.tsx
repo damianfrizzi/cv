@@ -2,6 +2,7 @@ import { PrismicDocument, PrismicEducation } from 'lib/prismic/types'
 import { FC } from 'react'
 import { Anchors, Section } from './section'
 import { Timeline } from './timeline'
+
 interface EducationProps {
   educations: Array<PrismicDocument<PrismicEducation>>
 }

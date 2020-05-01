@@ -1,22 +1,12 @@
 import { PrismicDocument, PrismicSkill } from 'lib/prismic/types'
 import { FC, Fragment } from 'react'
-import styled from 'styled-components'
 import { CardGrid } from './cardGrid'
 import { PrintBreakBefore } from './print'
 import { Anchors, Section } from './section'
 import { Skill } from './skill'
+import styles from './skills.module.scss'
 
 const printBreakAfter = [3]
-
-const PrintWrapper = styled.div`
-  display: none;
-
-  @media print {
-    display: block;
-    height: 150px;
-    grid-column: 2;
-  }
-`
 
 interface SkillsProps {
   skills: Array<PrismicDocument<PrismicSkill>>
@@ -29,9 +19,9 @@ export const Skills: FC<SkillsProps> = ({ skills }) => (
         <Fragment key={skill.id}>
           <Skill skill={skill} />
           {printBreakAfter.includes(i) && (
-            <PrintWrapper>
+            <div className={styles.printWrapper}>
               <PrintBreakBefore />
-            </PrintWrapper>
+            </div>
           )}
         </Fragment>
       ))}

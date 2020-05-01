@@ -1,10 +1,9 @@
 import { format } from 'date-fns'
 import { PrismicDocument, PrismicEducation, PrismicPosition } from 'lib/prismic/types'
-import { theme } from 'lib/theme'
 import { Date, RichText } from 'prismic-reactjs'
 import { FC, Fragment } from 'react'
-import styled from 'styled-components'
 import { Card } from './card'
+import styles from './timeline.module.scss'
 
 type PossibleDocuments = PrismicPosition | PrismicEducation
 
@@ -12,70 +11,16 @@ interface TimelineProps {
   items: Array<PrismicDocument<PossibleDocuments>>
 }
 
-export const timelineItemMarginBottom = theme.spacing(5)
-
-const TimelineContent = styled.div`
-  margin-top: ${timelineItemMarginBottom};
-
-  ul {
-    margin-top: 1rem;
-  }
-`
-
-const TimelineDeco = styled.div`
-  display: none;
-  position: relative;
-  margin-top: ${timelineItemMarginBottom};
-  padding: ${theme.spacing(3)} 0;
-
-  @media (min-width: 940px), print {
-    display: block;
-  }
-`
-
-const TimelineDecoCircle = styled.div`
-  width: ${theme.spacing(3)};
-  height: ${theme.spacing(3)};
-  border-radius: 50%;
-  box-shadow: inset ${theme.primaryColor} 0 0 0 0.125rem;
-  background: #fff;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: ${theme.spacing(6)};
-    height: ${`calc(100% + ${timelineItemMarginBottom})`};
-    width: 0.125rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: ${theme.primaryColor};
-  }
-`
-
-const TimelineItem = styled.article`
-  @media (min-width: 940px), print {
-    position: relative;
-    break-inside: avoid;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: ${theme.spacing(7)};
-
-    &:last-child ${TimelineDecoCircle}::after {
-      content: none;
-    }
-  }
-`
-
 export const Timeline: FC<TimelineProps> = ({ items }) => (
   <>
     {items.map(({ id, data }) => (
       <Fragment key={id}>
-        <TimelineItem>
-          <TimelineDeco>
-            <TimelineDecoCircle />
-          </TimelineDeco>
+        <div className={styles.item}>
+          <div className={styles.deco}>
+            <div className={styles.decoCircle} />
+          </div>
 
-          <TimelineContent>
+          <div className={styles.content}>
             <Card>
               <h2>
                 {isPosition(data) && (
@@ -100,8 +45,8 @@ export const Timeline: FC<TimelineProps> = ({ items }) => (
                 </ul>
               )}
             </Card>
-          </TimelineContent>
-        </TimelineItem>
+          </div>
+        </div>
       </Fragment>
     ))}
   </>

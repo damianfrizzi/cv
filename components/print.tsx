@@ -1,8 +1,4 @@
 import { FC } from 'react'
-import styled from 'styled-components'
+import styles from './print.module.scss'
 
-const Container = styled.div`
-  page-break-before: always;
-`
-
-export const PrintBreakBefore: FC = () => <Container />
+export const PrintBreakBefore: FC = () => <div className={styles.print} />

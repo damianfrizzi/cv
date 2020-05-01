@@ -1,0 +1,28 @@
+@import 'lib/scss/variables';
+
+.expertiseWrapper {
+  height: 6px;
+  margin: 12px 0;
+  background: #ddd;
+}
+
+.expertise {
+  height: 100%;
+  background: $primaryColor;
+}
+
+.small {
+  margin-right: $spacing * 3;
+  width: 30%;
+}
+
+.span {
+  width: 70%;
+}
+
+.paragraph {
+  @media (min-width: 940px), print {
+    display: flex;
+    align-items: baseline;
+  }
+}

@@ -1,133 +1,51 @@
 import { FC } from 'react'
-import styled from 'styled-components'
+import styles from './header.module.scss'
 
-interface IIcon {
+interface Icon {
   path: string
   alt: string
 }
 
-const Intro = styled.div`
-  width: 100%;
-`
-
-const Avatar = styled.div`
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  margin-top: -24px;
-  background-size: 80%;
-  background-position: 50%;
-  background-color: #f6f7f8;
-  background-repeat: no-repeat;
-  background-image: url('/static/images/damian-min.jpg');
-
-  @media print {
-    width: 170px;
-    height: 170px;
-  }
-`
-
-const SubHeader = styled.div`
-  @media (min-width: 940px), print {
-    display: flex;
-
-    ul {
-      flex: 1;
-    }
-  }
-`
-
-const Wrapper = styled.div`
-  position: relative;
-  padding: 24px 0;
-
-  p {
-    margin-bottom: ${({ theme }) => theme.spacing(2)};
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-column-gap: 3.75rem;
-    grid-row-gap: ${({ theme }) => theme.spacing(3)};
-    justify-items: center;
-    align-items: center;
-  }
-
-  @media print {
-    img {
-      width: 12px;
-      height: 12px;
-    }
-  }
-
-  @media (min-width: 940px), print {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    .container {
-      grid-template-columns: 168px auto;
-      justify-items: initial;
-    }
-  }
-`
-
-const ImageWrapper = styled.div`
-  display: inline-flex;
-  background: ${({ theme }) => theme.primaryColor};
-  border-radius: 50%;
-  padding: 6px;
-  margin-right: 0.75rem;
-  vertical-align: middle;
-`
-
-const githubIcon: IIcon = {
+const githubIcon: Icon = {
   path: '/static/images/github.svg',
   alt: 'Github Icon'
 }
 
-const twitterIcon: IIcon = {
+const twitterIcon: Icon = {
   path: '/static/images/twitter.svg',
   alt: 'Twitter Icon'
 }
 
-const emailIcon: IIcon = {
+const emailIcon: Icon = {
   path: '/static/images/email.svg',
   alt: 'Email Icon'
 }
 
-const phoneIcon: IIcon = {
+const phoneIcon: Icon = {
   path: '/static/images/phone.svg',
   alt: 'Phone Icon'
 }
 
-const pinIcon: IIcon = {
+const pinIcon: Icon = {
   path: '/static/images/pin.svg',
   alt: 'Pin Icon'
 }
 
-const Icon: FC<{ icon: IIcon }> = ({ icon }) => (
-  <ImageWrapper>
+const Icon: FC<{ icon: Icon }> = ({ icon }) => (
+  <div className={styles.imageWrapper}>
     <img width={16} height={16} src={icon.path} alt={icon.alt} />
-  </ImageWrapper>
+  </div>
 )
 
 export const Header: FC = () => (
-  <Wrapper>
+  <div className={styles.wrapper}>
     <div className={'container'}>
-      <Avatar />
-      <Intro>
+      <div className={styles.avatar} />
+      <div className={styles.intro}>
         <h1>Damian Frizzi</h1>
         <h3>Frontend Engineer</h3>
         <p>
-          This CV was created using TypeScript, Next.js, and Styled Components. It can either be viewed as a static, automatically deployed site at{' '}
+          This CV was created using TypeScript, Next.js, and Prismic as a headless CMS. It can either be viewed as a static, automatically deployed site at{' '}
           <a href="https://dafri.io">dafri.io</a> or as a PDF generated using Puppeteer when accessing{' '}
           <a target="_blank" rel="noopener" href="https://dafri.io/pdf">
             dafri.io/pdf
@@ -138,7 +56,7 @@ export const Header: FC = () => (
           </a>
           .
         </p>
-        <SubHeader>
+        <div className={styles.subHeader}>
           <ul>
             <li>
               <Icon icon={githubIcon} />
@@ -164,8 +82,8 @@ export const Header: FC = () => (
               Hagenholzstrasse 84, 8050 Zürich
             </li>
           </ul>
-        </SubHeader>
-      </Intro>
+        </div>
+      </div>
     </div>
-  </Wrapper>
+  </div>
 )

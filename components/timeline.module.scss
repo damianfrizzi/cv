@@ -1,0 +1,55 @@
+@import 'lib/scss/variables';
+
+$timelineItemMarginBottom: $spacing * 5;
+
+.content {
+  margin-top: $timelineItemMarginBottom;
+
+  ul {
+    margin-top: 1rem;
+  }
+}
+
+.item {
+  @media (min-width: 940px), print {
+    position: relative;
+    break-inside: avoid;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: $spacing * 7;
+
+    &:last-child .decoCircle::after {
+      content: none;
+    }
+  }
+}
+
+.deco {
+  display: none;
+  position: relative;
+  margin-top: $timelineItemMarginBottom;
+  padding: $spacing * 3 0;
+
+  @media (min-width: 940px), print {
+    display: block;
+  }
+}
+
+.decoCircle {
+  width: $spacing * 3;
+  height: $spacing * 3;
+  border-radius: 50%;
+  box-shadow: inset $primaryColor 0 0 0 0.125rem;
+  background: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $spacing * 6;
+    height: calc(100% + #{$timelineItemMarginBottom});
+    width: 0.125rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $primaryColor;
+  }
+}

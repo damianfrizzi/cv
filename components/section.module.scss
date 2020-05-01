@@ -1,0 +1,10 @@
+@import 'lib/scss/variables';
+
+.section {
+  position: relative;
+  padding-bottom: $spacing * 3;
+}
+
+.title {
+  padding: $spacing * 6 0 0;
+}

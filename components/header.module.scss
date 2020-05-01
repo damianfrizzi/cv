@@ -1,0 +1,83 @@
+@import 'lib/scss/variables';
+
+.intro {
+  width: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -24px;
+  background-size: 80%;
+  background-position: 50%;
+  background-color: #f6f7f8;
+  background-repeat: no-repeat;
+  background-image: url('/static/images/damian-min.jpg');
+
+  @media print {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+.subHeader {
+  @media (min-width: 940px), print {
+    display: flex;
+
+    ul {
+      flex: 1;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  padding: 24px 0;
+
+  p {
+    margin-bottom: $spacing * 2;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.container) {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 3.75rem;
+    grid-row-gap: $spacing * 3;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @media print {
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  @media (min-width: 940px), print {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    :global(.container) {
+      grid-template-columns: 168px auto;
+      justify-items: initial;
+    }
+  }
+}
+
+.imageWrapper {
+  display: inline-flex;
+  background: $primaryColor;
+  border-radius: 50%;
+  padding: 6px;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}

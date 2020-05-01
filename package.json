@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "chrome-aws-lambda": "2.0.1",
+    "classnames": "^2.2.6",
     "date-fns": "^2.12.0",
     "next": "9.3.4",
     "prismic-dom": "^2.2.3",
@@ -26,16 +27,15 @@
     "react-dom": "16.12.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/prismic-dom": "^2.1.1",
     "@types/puppeteer-core": "2.0.0",
     "@types/react": "16.9.16",
-    "@types/styled-components": "4.4.1",
     "@zeit/next-bundle-analyzer": "0.1.2",
-    "babel-plugin-styled-components": "1.10.6",
     "cross-env": "6.0.3",
     "next-offline": "4.0.6",
     "prettier": "1.19.1",
-    "styled-components": "4.4.1",
+    "sass": "^1.26.5",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "typescript": "3.7.4"

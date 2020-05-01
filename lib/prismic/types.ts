@@ -25,3 +25,8 @@ export interface PrismicEducation {
   end_date?: string
   duties?: PrismicData[]
 }
+
+export interface PrismicLanguage {
+  title?: string
+  skill_level?: 'Native' | 'Fluent' | 'Intermediate'
+}

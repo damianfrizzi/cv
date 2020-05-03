@@ -1,55 +1,110 @@
-@import 'lib/scss/variables';
-
-$timelineItemMarginBottom: $spacing * 5;
-
-.content {
-  margin-top: $timelineItemMarginBottom;
-
-  ul {
-    margin-top: 1rem;
-  }
-}
+@import 'lib/scss/shared';
 
 .item {
-  @media (min-width: 940px), print {
-    position: relative;
-    break-inside: avoid;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: $spacing * 7;
+  @media only screen and (max-width: $breakpointMobileMax) {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px 0px;
+    padding: 0 $spacing * 3;
+    margin: 0 $spacing * -3 $spacing * 3;
 
-    &:last-child .decoCircle::after {
-      content: none;
+    * {
+      box-shadow: none;
+    }
+  }
+
+  @media (min-width: $breakpointDesktopMin), print {
+    display: grid;
+    grid-template-columns: 40% auto 40%;
+  }
+
+  @media print {
+    page-break-inside: avoid;
+  }
+
+  &:not(:last-child) {
+    .titleColumn,
+    .descriptionColumn {
+      @media (min-width: $breakpointDesktopMin), print {
+        padding-bottom: $spacing * 6;
+      }
     }
   }
 }
 
-.deco {
-  display: none;
-  position: relative;
-  margin-top: $timelineItemMarginBottom;
-  padding: $spacing * 3 0;
-
-  @media (min-width: 940px), print {
-    display: block;
+.descriptionColumn {
+  @media only screen and (max-width: $breakpointMobileMax) {
+    margin-top: -$spacing * 3;
   }
 }
 
-.decoCircle {
-  width: $spacing * 3;
-  height: $spacing * 3;
-  border-radius: 50%;
-  box-shadow: inset $primaryColor 0 0 0 0.125rem;
+.dateColumn {
+  margin: 0 -1.5rem;
   background: #fff;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $spacing;
+  margin: 0;
+  background: transparent;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: $spacing * 6;
-    height: calc(100% + #{$timelineItemMarginBottom});
-    width: 0.125rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: $primaryColor;
+  .timeline {
+    width: 4px;
+    height: 100%;
+
+    &:first-child {
+      height: $spacing * 4;
+    }
+
+    &.timelineBackground {
+      background-color: #e1e4e8;
+    }
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    line-height: 1.3;
+    font-size: 0.875rem;
+    color: #6a737d;
+    justify-content: space-between;
+    padding: 0 $spacing;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dateStart,
+  .dateEnd {
+    width: calc(50% - 4px);
+    height: 100%;
+    position: relative;
+
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .dateCircle {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: $primaryColor;
+    box-shadow: #fff 0 0 0 3px, #e1e4e8 0 0 0 6px;
+  }
+}
+
+.hiddenMobile {
+  @media only screen and (max-width: $breakpointMobileMax) {
+    display: none;
+  }
+}
+
+.hiddenDesktop {
+  @media (min-width: $breakpointDesktopMin), print {
+    display: none;
   }
 }

@@ -12,10 +12,10 @@ export const Languages: FC<LanguagesProps> = ({ languages }) => (
   <Section title={Anchors.Languages}>
     <CardGrid numOfCells={4}>
       {languages
-        .sort(a => (a.data.skill_level === 'Native' ? -1 : 1))
-        .map(language => (
+        .sort((a) => (a.data.skill_level === 'Native' ? -1 : 1))
+        .map((language) => (
           <Card key={language.id}>
-            <h2>{language.data.title}</h2>
+            <h3>{language.data.title}</h3>
             <small>{language.data.skill_level}</small>
           </Card>
         ))}

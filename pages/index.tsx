@@ -41,21 +41,21 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
 
   const resPositions = await PrismicClient.query(Prismic.Predicates.at('document.type', 'position'), {
     ref,
-    orderings: '[my.position.start_date desc]'
+    orderings: '[my.position.start_date desc]',
   })
 
   const resEducations = await PrismicClient.query(Prismic.Predicates.at('document.type', 'education'), {
     ref,
-    orderings: '[my.education.start_date desc]'
+    orderings: '[my.education.start_date desc]',
   })
 
   const resLanguages = await PrismicClient.query(Prismic.Predicates.at('document.type', 'language'), {
-    ref
+    ref,
   })
 
   const resSkills = await PrismicClient.query(Prismic.Predicates.at('document.type', 'skill'), {
     ref,
-    orderings: '[my.skill.progress desc]'
+    orderings: '[my.skill.progress desc]',
   })
 
   return {
@@ -64,8 +64,8 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
       positions: resPositions.results ?? null,
       educations: resEducations.results ?? null,
       languages: resLanguages.results ?? null,
-      skills: resSkills.results ?? null
-    }
+      skills: resSkills.results ?? null,
+    },
   }
 }
 

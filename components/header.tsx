@@ -8,27 +8,27 @@ interface Icon {
 
 const githubIcon: Icon = {
   path: '/static/images/github.svg',
-  alt: 'Github Icon'
+  alt: 'Github Icon',
 }
 
 const twitterIcon: Icon = {
   path: '/static/images/twitter.svg',
-  alt: 'Twitter Icon'
+  alt: 'Twitter Icon',
 }
 
 const emailIcon: Icon = {
   path: '/static/images/email.svg',
-  alt: 'Email Icon'
+  alt: 'Email Icon',
 }
 
 const phoneIcon: Icon = {
   path: '/static/images/phone.svg',
-  alt: 'Phone Icon'
+  alt: 'Phone Icon',
 }
 
 const pinIcon: Icon = {
   path: '/static/images/pin.svg',
-  alt: 'Pin Icon'
+  alt: 'Pin Icon',
 }
 
 const Icon: FC<{ icon: Icon }> = ({ icon }) => (
@@ -45,7 +45,7 @@ export const Header: FC = () => (
         <h1>Damian Frizzi</h1>
         <h3>Frontend Engineer</h3>
         <p>
-          This CV was created using TypeScript, Next.js, and Prismic as a headless CMS. It can either be viewed as a static, automatically deployed site at{' '}
+          This CV was created using TypeScript, Next.js, and Prismic as a headless CMS. It can either be viewed as a static site at{' '}
           <a href="https://dafri.io">dafri.io</a> or as a PDF generated using Puppeteer when accessing{' '}
           <a target="_blank" rel="noopener" href="https://dafri.io/pdf">
             dafri.io/pdf

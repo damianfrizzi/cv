@@ -29,8 +29,8 @@ export interface PrismicEducation {
 export interface PrismicSkill {
   title?: string
   progress?: number
-  profficiency?: Array<{ skill: string }>
-  basics?: Array<{ skill: string }>
+  proficiency?: { skill: string }[]
+  basics?: { skill: string }[]
 }
 
 export interface PrismicLanguage {

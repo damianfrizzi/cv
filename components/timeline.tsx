@@ -1,9 +1,10 @@
 import { format } from 'date-fns'
 import { PrismicDocument, PrismicEducation, PrismicPosition } from 'lib/prismic/types'
 import { Date, RichText } from 'prismic-reactjs'
-import { FC, Fragment } from 'react'
+import { FC } from 'react'
 import { Card } from './card'
 import styles from './timeline.module.scss'
+import classNames from 'classnames'
 
 type PossibleDocuments = PrismicPosition | PrismicEducation
 
@@ -13,42 +14,78 @@ interface TimelineProps {
 
 export const Timeline: FC<TimelineProps> = ({ items }) => (
   <>
-    {items.map(({ id, data }) => (
-      <Fragment key={id}>
-        <div className={styles.item}>
-          <div className={styles.deco}>
-            <div className={styles.decoCircle} />
-          </div>
+    {items.map(({ id, data }, i) => {
+      const isFirst = i === 0
+      const isLast = i === items.length - 1
+      const startDate = Date(data.start_date)
+      const endDate = data.end_date ? Date(data.end_date) : null
 
-          <div className={styles.content}>
+      return (
+        <div className={styles.item} key={id}>
+          <div className={styles.titleColumn}>
             <Card>
-              <h2>
-                {isPosition(data) && (
-                  <>
-                    {data.position} <small>@{data.company}</small>
-                  </>
-                )}
-                {isEducation(data) && (
-                  <>
-                    {data.title} <small>@{data.school}</small>
-                  </>
-                )}
-              </h2>
-              <small>
-                {format(Date(data.start_date), 'LLLL yyyy')} - {data.end_date ? format(Date(data.end_date), 'LLLL yyyy') : 'Present'}
-              </small>
-              {isPosition(data) && data.duties && (
-                <ul>
-                  {data.duties.map((duty, i) => (
-                    <li key={i}>{RichText.asText([duty])}</li>
-                  ))}
-                </ul>
+              {isPosition(data) && (
+                <>
+                  <h3>{data.position}</h3> <small>@{data.company}</small>
+                </>
               )}
+              {isEducation(data) && (
+                <>
+                  <h3>{data.title}</h3> <small>@{data.school}</small>
+                </>
+              )}
+              <small className={styles.hiddenDesktop}>
+                {format(startDate, 'LLLL yyyy')} - {endDate ? format(endDate, 'LLLL yyyy') : 'Present'}
+              </small>
             </Card>
           </div>
+          <div className={classNames(styles.dateColumn, styles.hiddenMobile)}>
+            <div
+              className={classNames(styles.timeline, {
+                [styles.timelineBackground]: !isFirst,
+              })}
+            />
+            <div className={styles.date}>
+              <div className={styles.dateStart}>
+                <div>
+                  {format(startDate, 'LLLL')} <br />
+                  {format(startDate, 'yyyy')}
+                </div>
+              </div>
+              <div className={styles.dateCircle} />
+              <div className={styles.dateEnd}>
+                <div>
+                  {endDate ? (
+                    <>
+                      {format(endDate, 'LLLL')} <br />
+                      {format(endDate, 'yyyy')}
+                    </>
+                  ) : (
+                    'Present'
+                  )}
+                </div>
+              </div>
+            </div>
+            <div
+              className={classNames(styles.timeline, {
+                [styles.timelineBackground]: !isLast,
+              })}
+            />
+          </div>
+          {isPosition(data) && data.duties && (
+            <div className={styles.descriptionColumn}>
+              <Card>
+                <ul>
+                  {data.duties.map((duty, index) => (
+                    <li key={index}>{RichText.asText([duty])}</li>
+                  ))}
+                </ul>
+              </Card>
+            </div>
+          )}
         </div>
-      </Fragment>
-    ))}
+      )
+    })}
   </>
 )
 

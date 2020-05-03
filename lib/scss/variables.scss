@@ -1,4 +1,8 @@
-$primaryColor: #4477a7;
+$primaryColor: #1074e7;
 $linkColor: $primaryColor;
-$linkHoverColor: #487eb0;
+$linkHoverColor: $primaryColor;
+
 $spacing: 0.5rem;
+
+$breakpointMobileMax: 939px;
+$breakpointDesktopMin: 940px;

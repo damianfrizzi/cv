@@ -1,4 +1,4 @@
-@import 'lib/scss/variables';
+@import 'lib/scss/shared';
 
 .intro {
   width: 100%;
@@ -22,7 +22,7 @@
 }
 
 .subHeader {
-  @media (min-width: 940px), print {
+  @media (min-width: $breakpointDesktopMin), print {
     display: flex;
 
     ul {
@@ -60,7 +60,7 @@
     }
   }
 
-  @media (min-width: 940px), print {
+  @media (min-width: $breakpointDesktopMin), print {
     position: absolute;
     top: 0;
     left: 0;

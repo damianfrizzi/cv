@@ -1,4 +1,4 @@
-@import 'lib/scss/variables';
+@import 'lib/scss/shared';
 
 .section {
   position: relative;
@@ -6,5 +6,20 @@
 }
 
 .title {
-  padding: $spacing * 6 0 0;
+  padding: $spacing * 3 0;
+  display: inline-block;
+  font-size: 1.5rem;
+
+  @media (min-width: $breakpointDesktopMin), print {
+    padding: $spacing * 6 0 $spacing * 4;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: $primaryColor;
+    height: 0.25rem;
+    margin-top: $spacing;
+    width: 60%;
+  }
 }

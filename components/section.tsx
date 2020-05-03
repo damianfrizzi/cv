@@ -7,7 +7,7 @@ export enum Anchors {
   Education = 'Education',
   Skills = 'Technologies and Skills',
   Languages = 'Languages',
-  Personal = 'Personal'
+  Personal = 'Personal',
 }
 
 interface SectionProps {
@@ -17,6 +17,6 @@ interface SectionProps {
 export const Section: FC<SectionProps> = ({ children, title }) => (
   <div className={classNames('container', styles.section)}>
     <h2 className={styles.title}>{title}</h2>
-    {children}
+    <div>{children}</div>
   </div>
 )

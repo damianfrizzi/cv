@@ -1,4 +1,4 @@
-@import 'lib/scss/variables';
+@import 'lib/scss/shared';
 
 .experience {
   ul {
@@ -16,7 +16,7 @@
         content: '-';
         position: absolute;
         left: 0;
-        color: $primaryColor;
+        color: #a9a9a9;
       }
     }
   }

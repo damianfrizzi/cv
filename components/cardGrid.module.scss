@@ -1,13 +1,11 @@
-@import 'lib/scss/variables';
+@import 'lib/scss/shared';
 
 .cardGrid {
   display: grid;
   grid-template-columns: 100%;
-  margin-top: $spacing * 5;
+  grid-gap: $spacing * 3;
 
-  @media (min-width: 940px), print {
-    grid-gap: $spacing * 3;
-
+  @media (min-width: $breakpointDesktopMin), print {
     &.twoCells {
       grid-template-columns: 1fr 1fr;
     }

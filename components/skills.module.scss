@@ -1,11 +1,19 @@
-@import 'lib/scss/variables';
+@import 'lib/scss/shared';
 
-.printWrapper {
-  display: none;
+.title {
+  margin-right: $spacing * 3;
+  width: 30%;
+  color: #6f7780;
+}
 
-  @media print {
-    display: block;
-    height: 150px;
-    grid-column: 2;
+.list {
+  width: 70%;
+  margin-bottom: $spacing;
+}
+
+.skillBlock {
+  @media (min-width: $breakpointDesktopMin), print {
+    display: flex;
+    align-items: baseline;
   }
 }

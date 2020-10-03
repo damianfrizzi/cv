@@ -1,4 +1,4 @@
-import { Document } from 'prismic-javascript/d.ts/documents'
+import { Document } from 'prismic-javascript/types/documents'
 
 export interface PrismicDocument<T> extends Omit<Document, 'data'> {
   data: T

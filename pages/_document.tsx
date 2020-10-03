@@ -1,4 +1,4 @@
-import Document, { DocumentContext, DocumentInitialProps, Head, Main, NextScript } from 'next/document'
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 
 export default class CustomDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -8,11 +8,10 @@ export default class CustomDocument extends Document {
 
   public render(): JSX.Element {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <meta content="CV of Frontend Engineer Damian Frizzi" name="description" />
-          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           <meta name="theme-color" content="#487eb0" />
           <link href="/static/manifest.json" rel="manifest" />
           <link rel="shortcut icon" href="/static/images/favicon.ico?v=1" type="image/x-icon" />
@@ -23,7 +22,7 @@ export default class CustomDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

@@ -13,7 +13,7 @@ export const Skills: FC<SkillsProps> = ({ skills }) => (
   <Section title={Anchors.Skills}>
     <CardGrid numOfCells={2}>
       {skills.map(({ data }, _i) => (
-        <Card>
+        <Card key={data.title}>
           <h3>{data.title}</h3>
 
           {data.proficiency && data.proficiency.length > 0 && (

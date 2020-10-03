@@ -8,12 +8,11 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  margin-top: -24px;
-  background-size: 80%;
+  background-size: cover;
   background-position: 50%;
   background-color: #f6f7f8;
   background-repeat: no-repeat;
-  background-image: url('/static/images/damian-min.jpg');
+  background-image: url('/static/images/damianPortrait.jpg');
 
   @media print {
     width: 170px;
@@ -46,11 +45,9 @@
 
   :global(.container) {
     display: grid;
-    grid-template-columns: 100%;
-    grid-column-gap: 3.75rem;
+    grid-column-gap: 4.25rem;
     grid-row-gap: $spacing * 3;
     justify-items: center;
-    align-items: center;
   }
 
   @media print {

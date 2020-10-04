@@ -104,6 +104,8 @@
 }
 
 .hiddenDesktop {
+  display: block;
+
   @media (min-width: $breakpointDesktopMin), print {
     display: none;
   }

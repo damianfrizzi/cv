@@ -25,12 +25,10 @@ const HomePage: NextPage<HomePageProps> = ({ positions, educations, languages, s
     </Head>
     <Stripe position={Stripes.Top} />
     <Header />
-    <main>
-      <Experience positions={positions} />
-      <Education educations={educations} />
-      <Skills skills={skills} />
-      <Languages languages={languages} />
-    </main>
+    <Experience positions={positions} />
+    <Education educations={educations} />
+    <Skills skills={skills} />
+    <Languages languages={languages} />
     <Stripe position={Stripes.Bottom} />
   </Main>
 )

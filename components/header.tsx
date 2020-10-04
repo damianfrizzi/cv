@@ -32,7 +32,7 @@ const pinIcon: Icon = {
 }
 
 const Icon: FC<{ icon: Icon }> = ({ icon }) => (
-  <div className={styles.imageWrapper}>
+  <div className={styles.icon}>
     <img width={16} height={16} src={icon.path} alt={icon.alt} />
   </div>
 )
@@ -45,7 +45,7 @@ export const Header: FC = () => (
         <h1>Damian Frizzi</h1>
         <h3>Frontend Engineer</h3>
         <p>
-          This CV was created using TypeScript, Next.js, and Prismic as a headless CMS. It can either be viewed as a static site at{' '}
+          This resume was created using TypeScript, Next.js, and Prismic as a headless CMS. It can either be viewed as a static site at{' '}
           <a href="https://dafri.io">dafri.io</a> or as a PDF generated using Puppeteer when accessing{' '}
           <a target="_blank" rel="noopener" href="https://dafri.io/pdf">
             dafri.io/pdf
@@ -56,18 +56,7 @@ export const Header: FC = () => (
           </a>
           .
         </p>
-        <div className={styles.subHeader}>
-          <ul>
-            <li>
-              <Icon icon={githubIcon} />
-              <a href="https://github.com/damianfrizzi">github.com/damianfrizzi</a>
-            </li>
-            <li>
-              <Icon icon={twitterIcon} />
-              <a href="https://twitter.com/damianfrizzi">twitter.com/damianfrizzi</a>
-            </li>
-          </ul>
-
+        <div className={styles.links}>
           <ul>
             <li>
               <Icon icon={emailIcon} />
@@ -80,6 +69,16 @@ export const Header: FC = () => (
             <li>
               <Icon icon={pinIcon} />
               Hagenholzstrasse 84, 8050 Zürich
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Icon icon={githubIcon} />
+              <a href="https://github.com/damianfrizzi">github.com/damianfrizzi</a>
+            </li>
+            <li>
+              <Icon icon={twitterIcon} />
+              <a href="https://twitter.com/damianfrizzi">twitter.com/damianfrizzi</a>
             </li>
           </ul>
         </div>

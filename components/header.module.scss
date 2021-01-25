@@ -1,4 +1,4 @@
-@import 'lib/scss/shared';
+@import "lib/scss/shared";
 
 .intro {
   width: 100%;
@@ -14,7 +14,7 @@
   height: 200px;
   background-size: cover;
   background-position: 50%;
-  background-image: url('/static/images/damianPortrait.jpg');
+  background-image: url("/static/images/damianPortrait.jpg");
 
   @media print {
     width: 170px;
@@ -34,7 +34,7 @@
 
 .wrapper {
   position: relative;
-  padding: 24px 0;
+  padding: $spacing * 5 0 $spacing * 5;
   background-color: #fff;
 
   p {
@@ -61,11 +61,6 @@
   }
 
   @media (min-width: $breakpointDesktopMin), print {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
     :global(.container) {
       grid-template-columns: 184px auto;
       justify-items: initial;

@@ -1,4 +1,4 @@
-@import 'lib/scss/shared';
+@import "lib/scss/shared";
 
 .experience {
   ul {
@@ -13,7 +13,7 @@
       }
 
       &::before {
-        content: '-';
+        content: "-";
         position: absolute;
         left: 0;
         color: #a9a9a9;

@@ -1,3 +1,6 @@
+@import "lib/scss/shared";
+
 .main {
+  padding-bottom: $spacing * 7;
   background: #f6f7f8;
 }

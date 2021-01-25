@@ -24,7 +24,7 @@
     .titleColumn,
     .descriptionColumn {
       @media (min-width: $breakpointDesktopMin), print {
-        padding-bottom: $spacing * 6;
+        padding-bottom: $spacing * 4;
       }
     }
   }
